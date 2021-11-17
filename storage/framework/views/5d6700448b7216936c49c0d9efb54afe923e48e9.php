@@ -19,17 +19,20 @@
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
                     <a href="<?php echo e(route('home')); ?>" class="nav-link text-primary">
-                        <i class="tim-icons icon-minimal-left"></i> Home
+                        <i class="tim-icons icon-minimal-left"></i> <?php echo e(trans('navbar.home')); ?>
+
                     </a>
                 </li>
                 <li class="nav-item ">
                     <a href="<?php echo e(route('register')); ?>" class="nav-link">
-                        <i class="tim-icons icon-laptop"></i> Register
+                        <i class="tim-icons icon-laptop"></i> <?php echo e(trans('navbar.register')); ?>
+
                     </a>
                 </li>
                 <li class="nav-item ">
                     <a href="<?php echo e(route('login')); ?>" class="nav-link">
-                        <i class="tim-icons icon-single-02"></i> Login
+                        <i class="tim-icons icon-single-02"></i> <?php echo e(trans('navbar.login')); ?>
+
                     </a>
                 </li>
             </ul>

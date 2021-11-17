@@ -6,7 +6,7 @@
             <div class="card card-register card-white">
                 <div class="card-header">
                     <img class="card-img" src="{{ asset('assets') }}/img/card-primary.png" alt="Card image">
-                    <h4 class="card-title">Register</h4>
+                    <h4 class="card-title p-4">{{trans("register.register")}}</h4>
                 </div>
                 <form class="form" method="post" action="{{ route('register') }}">
                     @csrf
@@ -18,7 +18,7 @@
                                     <i class="tim-icons icon-single-02"></i>
                                 </div>
                             </div>
-                            <input type="text" name="name" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Name" value="{{ old('name') }}">
+                            <input type="text" name="name" class="form-control {{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ trans("register.name")}} " value="{{ old('name') }}">
                             @include('alerts.feedback', ['field' => 'name'])
                         </div>
                         <div class="input-group{{ $errors->has('email') ? ' has-danger' : '' }}">
@@ -27,7 +27,7 @@
                                     <i class="tim-icons icon-email-85"></i>
                                 </div>
                             </div>
-                            <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="Email" value="{{ old('email') }}">
+                            <input type="email" name="email" class="form-control{{ $errors->has('email') ? ' is-invalid' : '' }}" placeholder="{{ trans("register.email")}} " value="{{ old('email') }}">
                             @include('alerts.feedback', ['field' => 'email'])
                         </div>
                         <div class="input-group{{ $errors->has('password') ? ' has-danger' : '' }}">
@@ -36,7 +36,7 @@
                                     <i class="tim-icons icon-lock-circle"></i>
                                 </div>
                             </div>
-                            <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="Password">
+                            <input type="password" name="password" class="form-control{{ $errors->has('password') ? ' is-invalid' : '' }}" placeholder="{{ trans("register.password") }}">
                             @include('alerts.feedback', ['field' => 'password'])
                         </div>
                         <div class="input-group">
@@ -45,19 +45,19 @@
                                     <i class="tim-icons icon-lock-circle"></i>
                                 </div>
                             </div>
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="Repeat Password">
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="{{ trans("register.repeat_password") }}">
                         </div>
                         <div class="form-check text-left {{ $errors->has('password') ? ' has-danger' : '' }}">
                             <label class="form-check-label">
                                 <input class="form-check-input {{ $errors->has('agree_terms_and_conditions') ? ' is-invalid' : '' }}" name="agree_terms_and_conditions"  type="checkbox"  {{ old('agree_terms_and_conditions') ? 'checked' : '' }}>
                                 <span class="form-check-sign"></span>
-                                I confirm that I am human.
+                                {{ trans("register.confirm_message") }}
                                 @include('alerts.feedback', ['field' => 'agree_terms_and_conditions'])
                             </label>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-round btn-lg">Sign up</button>
+                        <button type="submit" class="btn btn-primary btn-round btn-lg">{{ trans("register.sing_up") }}</button>
                     </div>
                 </form>
             </div>

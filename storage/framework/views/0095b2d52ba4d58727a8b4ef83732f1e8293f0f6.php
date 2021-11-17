@@ -6,7 +6,7 @@
             <div class="card card-register card-white">
                 <div class="card-header">
                     <img class="card-img" src="<?php echo e(asset('assets')); ?>/img/card-primary.png" alt="Card image">
-                    <h4 class="card-title">Register</h4>
+                    <h4 class="card-title p-4"><?php echo e(trans("register.register")); ?></h4>
                 </div>
                 <form class="form" method="post" action="<?php echo e(route('register')); ?>">
                     <?php echo csrf_field(); ?>
@@ -18,7 +18,7 @@
                                     <i class="tim-icons icon-single-02"></i>
                                 </div>
                             </div>
-                            <input type="text" name="name" class="form-control <?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" placeholder="Name" value="<?php echo e(old('name')); ?>">
+                            <input type="text" name="name" class="form-control <?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" placeholder="<?php echo e(trans("register.name")); ?> " value="<?php echo e(old('name')); ?>">
                             <?php echo $__env->make('alerts.feedback', ['field' => 'name'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
                         <div class="input-group<?php echo e($errors->has('email') ? ' has-danger' : ''); ?>">
@@ -27,7 +27,7 @@
                                     <i class="tim-icons icon-email-85"></i>
                                 </div>
                             </div>
-                            <input type="email" name="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" placeholder="Email" value="<?php echo e(old('email')); ?>">
+                            <input type="email" name="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" placeholder="<?php echo e(trans("register.email")); ?> " value="<?php echo e(old('email')); ?>">
                             <?php echo $__env->make('alerts.feedback', ['field' => 'email'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
                         <div class="input-group<?php echo e($errors->has('password') ? ' has-danger' : ''); ?>">
@@ -36,7 +36,7 @@
                                     <i class="tim-icons icon-lock-circle"></i>
                                 </div>
                             </div>
-                            <input type="password" name="password" class="form-control<?php echo e($errors->has('password') ? ' is-invalid' : ''); ?>" placeholder="Password">
+                            <input type="password" name="password" class="form-control<?php echo e($errors->has('password') ? ' is-invalid' : ''); ?>" placeholder="<?php echo e(trans("register.password")); ?>">
                             <?php echo $__env->make('alerts.feedback', ['field' => 'password'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
                         <div class="input-group">
@@ -45,19 +45,20 @@
                                     <i class="tim-icons icon-lock-circle"></i>
                                 </div>
                             </div>
-                            <input type="password" name="password_confirmation" class="form-control" placeholder="Repeat Password">
+                            <input type="password" name="password_confirmation" class="form-control" placeholder="<?php echo e(trans("register.repeat_password")); ?>">
                         </div>
                         <div class="form-check text-left <?php echo e($errors->has('password') ? ' has-danger' : ''); ?>">
                             <label class="form-check-label">
                                 <input class="form-check-input <?php echo e($errors->has('agree_terms_and_conditions') ? ' is-invalid' : ''); ?>" name="agree_terms_and_conditions"  type="checkbox"  <?php echo e(old('agree_terms_and_conditions') ? 'checked' : ''); ?>>
                                 <span class="form-check-sign"></span>
-                                I confirm that I am human.
+                                <?php echo e(trans("register.confirm_message")); ?>
+
                                 <?php echo $__env->make('alerts.feedback', ['field' => 'agree_terms_and_conditions'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </label>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-primary btn-round btn-lg">Sign up</button>
+                        <button type="submit" class="btn btn-primary btn-round btn-lg"><?php echo e(trans("register.sing_up")); ?></button>
                     </div>
                 </form>
             </div>
