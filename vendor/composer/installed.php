@@ -1,15 +1,24 @@
 <?php return array(
     'root' => array(
-        'pretty_version' => 'dev-master',
-        'version' => 'dev-master',
+        'pretty_version' => 'dev-main',
+        'version' => 'dev-main',
         'type' => 'project',
         'install_path' => __DIR__ . '/../../',
         'aliases' => array(),
-        'reference' => '8e149d3521c5fff0531c593fcc86a32315f94a41',
+        'reference' => '5db189e153d4c048d3c7ea1f68225000a21df868',
         'name' => 'laravel/laravel',
         'dev' => true,
     ),
     'versions' => array(
+        'barryvdh/laravel-debugbar' => array(
+            'pretty_version' => 'v3.6.4',
+            'version' => '3.6.4.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../barryvdh/laravel-debugbar',
+            'aliases' => array(),
+            'reference' => '3c2d678269ba60e178bcd93e36f6a91c36b727f1',
+            'dev_requirement' => true,
+        ),
         'brick/math' => array(
             'pretty_version' => '0.8.15',
             'version' => '0.8.15.0',
@@ -338,12 +347,12 @@
             'dev_requirement' => false,
         ),
         'laravel/laravel' => array(
-            'pretty_version' => 'dev-master',
-            'version' => 'dev-master',
+            'pretty_version' => 'dev-main',
+            'version' => 'dev-main',
             'type' => 'project',
             'install_path' => __DIR__ . '/../../',
             'aliases' => array(),
-            'reference' => '8e149d3521c5fff0531c593fcc86a32315f94a41',
+            'reference' => '5db189e153d4c048d3c7ea1f68225000a21df868',
             'dev_requirement' => false,
         ),
         'laravel/tinker' => array(
@@ -390,6 +399,15 @@
             'aliases' => array(),
             'reference' => 'fda190b62b962d96a069fcc414d781db66d65b69',
             'dev_requirement' => false,
+        ),
+        'maximebf/debugbar' => array(
+            'pretty_version' => 'v1.17.3',
+            'version' => '1.17.3.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../maximebf/debugbar',
+            'aliases' => array(),
+            'reference' => 'e8ac3499af0ea5b440908e06cc0abe5898008b3c',
+            'dev_requirement' => true,
         ),
         'mockery/mockery' => array(
             'pretty_version' => '1.4.1',
@@ -625,8 +643,8 @@
         'psr/log-implementation' => array(
             'dev_requirement' => false,
             'provided' => array(
-                0 => '1.0',
-                1 => '1.0.0',
+                0 => '1.0.0',
+                1 => '1.0',
             ),
         ),
         'psr/simple-cache' => array(
@@ -814,6 +832,15 @@
             'aliases' => array(),
             'reference' => 'e544e24472d4c97b2d11ade7caacd446727c6bf9',
             'dev_requirement' => false,
+        ),
+        'symfony/debug' => array(
+            'pretty_version' => 'v4.4.31',
+            'version' => '4.4.31.0',
+            'type' => 'library',
+            'install_path' => __DIR__ . '/../symfony/debug',
+            'aliases' => array(),
+            'reference' => '43ede438d4cb52cd589ae5dc070e9323866ba8e0',
+            'dev_requirement' => true,
         ),
         'symfony/deprecation-contracts' => array(
             'pretty_version' => 'v2.1.3',
