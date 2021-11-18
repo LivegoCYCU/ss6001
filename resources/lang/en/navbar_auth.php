@@ -13,10 +13,10 @@ return [
     |
     */
 
-    'search' => '搜尋',
-    'notifications' => '通知',
-    'log_out' => '登出',
-    'profile_photo' => '個人頭像',
-    'profile' => '個人檔案',
-    'close' => '關閉',
+    'search' => 'Search',
+    'notifications' => 'Notifications',
+    'log_out' => 'Log out',
+    'profile_photo' => 'Profile Photo',
+    'profile' => 'Profile',
+    'close' => 'Close',
 ];

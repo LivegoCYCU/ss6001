@@ -4,10 +4,10 @@
             <li @if ($pageSlug == 'dashboard') class="active " @endif>
                 <a href="{{ route('home') }}">
                     <i class="tim-icons icon-chart-bar-32"></i>
-                    <p>Dashboard</p>
+                    <p>{{ trans('sidebar.dashboard') }}</p>
                 </a>
             </li>
-            <li>
+            {{-- <li>
                 <a data-toggle="collapse" href="#transactions" {{ $section == 'transactions' ? 'aria-expanded=true' : '' }}>
                     <i class="tim-icons icon-bank" ></i>
                     <span class="nav-link-text">Transactions</span>
@@ -60,12 +60,12 @@
                         </li>
                     </ul>
                 </div>
-            </li>
+            </li> --}}
 
             <li>
                 <a data-toggle="collapse" href="#inventory" {{ $section == 'inventory' ? 'aria-expanded=true' : '' }}>
                     <i class="tim-icons icon-app"></i>
-                    <span class="nav-link-text">Inventory</span>
+                    <span class="nav-link-text">{{ trans('sidebar.inventory.inventory') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
@@ -74,25 +74,25 @@
                         <li @if ($pageSlug == 'istats') class="active " @endif>
                             <a href="{{ route('inventory.stats') }}">
                                 <i class="tim-icons icon-chart-pie-36"></i>
-                                <p>Statistics</p>
+                                <p>{{ trans('sidebar.inventory.statistics') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'products') class="active " @endif>
                             <a href="{{ route('products.index') }}">
                                 <i class="tim-icons icon-notes"></i>
-                                <p>Products</p>
+                                <p>{{ trans('sidebar.inventory.products') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'categories') class="active " @endif>
                             <a href="{{ route('categories.index') }}">
                                 <i class="tim-icons icon-tag"></i>
-                                <p>Categoríes</p>
+                                <p>{{ trans('sidebar.inventory.categories') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'receipts') class="active " @endif>
                             <a href="{{ route('receipts.index') }}">
                                 <i class="tim-icons icon-paper"></i>
-                                <p>Receipts</p>
+                                <p>{{ trans('sidebar.inventory.receipts') }}</p>
                             </a>
                         </li>
                     </ul>
@@ -102,23 +102,23 @@
             <li @if ($pageSlug == 'clients') class="active " @endif>
                 <a href="{{ route('clients.index') }}">
                     <i class="tim-icons icon-single-02"></i>
-                    <p>Clients</p>
+                    <p>{{ trans('sidebar.clients') }}</p>
                 </a>
             </li>
 
             <li @if ($pageSlug == 'providers') class="active " @endif>
                 <a href="{{ route('providers.index') }}">
                     <i class="tim-icons icon-delivery-fast"></i>
-                    <p>Providers</p>
+                    <p>{{ trans('sidebar.providers') }}</p>
                 </a>
             </li>
 
-            <li @if ($pageSlug == 'methods') class="active " @endif>
+            {{-- <li @if ($pageSlug == 'methods') class="active " @endif>
                 <a href="{{ route('methods.index') }}">
                     <i class="tim-icons icon-wallet-43"></i>
                     <p>Methods and Accounts</p>
                 </a>
-            </li>
+            </li> --}}
 
 
             <!-- <li>
@@ -131,13 +131,13 @@
                 <div class="collapse" id="clients">
                     <ul class="nav pl-4">
                         <li @if ($pageSlug == 'clients-list') class="active " @endif>
-                            <a href="{{ route('clients.index')  }}">
+                            <a href="{{ route('clients.index') }}">
                                 <i class="tim-icons icon-notes"></i>
                                 <p>Administrar Clients</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'clients-create') class="active " @endif>
-                            <a href="{{ route('clients.create')  }}">
+                            <a href="{{ route('clients.create') }}">
                                 <i class="tim-icons icon-simple-add"></i>
                                 <p>New Client</p>
                             </a>
@@ -149,29 +149,29 @@
 
             <li>
                 <a data-toggle="collapse" href="#users" {{ $section == 'users' ? 'aria-expanded=true' : '' }}>
-                    <i class="tim-icons icon-badge" ></i>
-                    <span class="nav-link-text">Users</span>
+                    <i class="tim-icons icon-badge"></i>
+                    <span class="nav-link-text">{{ trans('sidebar.users.users') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
                 <div class="collapse {{ $section == 'users' ? 'aria-expanded=true' : '' }}" id="users">
                     <ul class="nav pl-4">
                         <li @if ($pageSlug == 'profile') class="active " @endif>
-                            <a href="{{ route('profile.edit')  }}">
+                            <a href="{{ route('profile.edit') }}">
                                 <i class="tim-icons icon-badge"></i>
-                                <p>My profile</p>
+                                <p>{{ trans('sidebar.users.profile') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'users-list') class="active " @endif>
-                            <a href="{{ route('users.index')  }}">
+                            <a href="{{ route('users.index') }}">
                                 <i class="tim-icons icon-notes"></i>
-                                <p>Manage Users</p>
+                                <p>{{ trans('sidebar.users.management') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'users-create') class="active " @endif>
-                            <a href="{{ route('users.create')  }}">
+                            <a href="{{ route('users.create') }}">
                                 <i class="tim-icons icon-simple-add"></i>
-                                <p>New user</p>
+                                <p>{{ trans('sidebar.users.add') }}</p>
                             </a>
                         </li>
                     </ul>

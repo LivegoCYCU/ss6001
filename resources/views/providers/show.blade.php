@@ -5,30 +5,31 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Provider Information</h4>
+                    <h4 class="card-title">{{ trans("providers.show") }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>ID</th>
-                            <th>Name</th>
-                            <th>Description</th>
-                            <th>Email</th>
-                            <th>Telephone</th>
-                            <th>Payment information</th>
-                            <th>Payments Made</th>
-                            <th>Total Payment</th>
+                            <th scope="col">{{ trans('providers.name') }}</th>
+                            <th scope="col">{{ trans('providers.company') }}</th>
+                            <th scope="col">{{ trans('providers.LINE') }}</th>
+                            <th scope="col">{{ trans('providers.email') }}</th>
+                            <th scope="col">{{ trans('providers.telephone') }}</th>
+                            <th scope="col">{{ trans('providers.order_amount') }}</th>
+                            <th scope="col">{{ trans('providers.receipt_amount') }}</th>
+                            <th scope="col">{{ trans('providers.description') }}</th>
+                            <th scope="col"></th>
                         </thead>
                         <tbody>
                             <tr>
-                                <td>{{ $provider->id }}</td>
                                 <td>{{ $provider->name }}</td>
-                                <td>{{ $provider->description }}</td>
+                                <td>{{ $provider->company }}</td>
+                                <td>{{ $provider->LINE }}</td>
                                 <td>{{ $provider->email }}</td>
                                 <td>{{ $provider->phone }}</td>
-                                <td style="max-width: 175px">{{ $provider->paymentinfo }}</td>
-                                <td>{{ $provider->transactions->count() }}</td>
                                 <td>{{ format_money(abs($provider->transactions->sum('amount'))) }}</td>
+                                <td>{{ format_money(abs($provider->transactions->sum('amount'))) }}</td>
+                                <td>{{ $provider->description }}</td>
                             </tr>
                         </tbody>
                     </table>

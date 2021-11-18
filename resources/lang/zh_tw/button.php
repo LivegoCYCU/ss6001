@@ -13,10 +13,12 @@ return [
     |
     */
 
-    'search' => '搜尋',
-    'notifications' => '通知',
-    'log_out' => '登出',
-    'profile_photo' => '個人頭像',
-    'profile' => '個人檔案',
-    'close' => '關閉',
+    'create' => '創建',
+    'edit' => '編輯',
+    'update' => '更新',
+    'save' => '儲存',
+    'submit' => '送出',
+    'OK' => '確認',
+    'cancel' => '取消',
+    'back' => '回到列表頁',
 ];
