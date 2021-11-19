@@ -21,4 +21,8 @@ return [
     'OK' => '確認',
     'cancel' => '取消',
     'back' => '回到列表頁',
+    'add' => '新增',
+    'delete' => '刪除',
+    'not_specified' => '未標明',
+    'continue' => '繼續' 
 ];

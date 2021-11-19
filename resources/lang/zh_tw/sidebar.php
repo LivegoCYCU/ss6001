@@ -31,5 +31,10 @@ return [
     ],
     'header' => [
         'providers' => '廠商名單',
+        'receipts' => '收據',
+        'manage_receipt' => '收據管理',
+        'new_receipt' => '新增收據',
+        'add_product' => '新增商品',
+        'edit_product' => '編輯商品',
     ]
 ];

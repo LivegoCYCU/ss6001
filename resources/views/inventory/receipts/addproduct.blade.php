@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Add Product', 'pageSlug' => 'receipt', 'section' => 'inventory'])
+@extends('layouts.app', ['page' => trans('sidebar.header.add_product'), 'pageSlug' => 'receipt', 'section' => 'inventory'])
 
 @section('content')
     <div class="row">
@@ -7,11 +7,10 @@
                 <div class="card-header">
                     <div class="row align-items-center">
                         <div class="col-8">
-                            <h3 class="mb-0">Add Product</h3>
+                            <h3 class="mb-0">{{ trans('sidebar.header.add_product') }}</h3>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('receipts.show', $receipt) }}" class="btn btn-sm btn-primary">Back to
-                                List</a>
+                            <a href="{{ route('receipts.show', $receipt) }}" class="btn btn-sm btn-primary">{{ trans('button.back') }}</a>
                         </div>
                     </div>
                 </div>
@@ -22,7 +21,7 @@
                         <div class="pl-lg-4">
                             <input type="hidden" name="receipt_id" value="{{ $receipt->id }}">
                             <div class="form-group{{ $errors->has('product_id') ? ' has-danger' : '' }}">
-                                <label class="form-control-label" for="input-product">Product</label>
+                                <label class="form-control-label" for="input-product">{{ trans('receipts.products.product') }}</label>
                                 <select name="product_id" id="input-product"
                                     class="form-select form-control-alternative{{ $errors->has('product_id') ? ' is-invalid' : '' }}"
                                     required>
@@ -40,7 +39,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('stock') ? ' has-danger' : '' }}">
-                                <label class="form-control-label" for="input-stock">Stock</label>
+                                <label class="form-control-label" for="input-stock">{{ trans('receipts.products.stock') }}</label>
                                 <input type="number" name="stock" id="input-stock"
                                     class="form-control form-control-alternative{{ $errors->has('stock') ? ' is-invalid' : '' }}"
                                     value="0" required>
@@ -48,7 +47,7 @@
                             </div>
 
                             <div class="form-group{{ $errors->has('stock_defective') ? ' has-danger' : '' }}">
-                                <label class="form-control-label" for="input-stock_defective">Defective Stock</label>
+                                <label class="form-control-label" for="input-stock_defective">{{ trans('receipts.products.defective_stock') }}</label>
                                 <input type="number" name="stock_defective" id="input-stock_defective"
                                     class="form-control form-control-alternative{{ $errors->has('stock_defective') ? ' is-invalid' : '' }}"
                                     value="0" required>
@@ -56,7 +55,7 @@
                             </div>
 
                             <div class="text-center">
-                                <button type="submit" class="btn btn-success mt-4">Continue</button>
+                                <button type="submit" class="btn btn-success mt-4">{{ trans('button.continue')}}</button>
                             </div>
                         </div>
                     </form>

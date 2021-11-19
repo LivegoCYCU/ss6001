@@ -27,9 +27,14 @@ return [
         'statistics' => 'Statistics',
         'categories' => 'Categories',
         'receipts' => 'Receipts',
+        'products' => 'product list'
     ],
     'header' => [
         'providers' => 'LIST OF PROVIDERS',
-
+        'receipts' => 'RECEIPTS',
+        'manage_receipt' => 'Manage Receipt',
+        'new_receipt' => 'New Receipt',
+        'add_product' => 'Add Product',
+        'edit_product' => 'Edit Product',
     ]
 ];

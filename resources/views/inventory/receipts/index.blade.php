@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Receipts', 'pageSlug' => 'receipts', 'section' => 'inventory'])
+@extends('layouts.app', ['page' => trans('sidebar.header.receipts'), 'pageSlug' => 'receipts', 'section' => 'inventory'])
 
 @section('content')
     @include('alerts.success')
@@ -7,10 +7,10 @@
             <div class="card-header">
                 <div class="row">
                     <div class="col-8">
-                        <h4 class="card-title">Receipts</h4>
+                        <h4 class="card-title">{{ trans('sidebar.header.receipts') }}</h4>
                     </div>
                     <div class="col-4 text-right">
-                        <a href="{{ route('receipts.create') }}" class="btn btn-sm btn-primary">New Receipt</a>
+                        <a href="{{ route('receipts.create') }}" class="btn btn-sm btn-primary">{{ trans('receipts.new') }}</a>
                     </div>
                 </div>
             </div>
@@ -18,13 +18,13 @@
                 <div class="">
                     <table class="table">
                         <thead>
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>Provider</th>
-                            <th>products</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Status</th>
+                            <th>{{ trans('receipts.receipt_summary.date') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.title') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.provider') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.products') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.stock') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.defective_stock') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.status') }}</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -44,9 +44,9 @@
                                     <td>{{ $receipt->products->sum('stock_defective') }}</td>
                                     <td>
                                         @if($receipt->finalized_at)
-                                            FINALIZED
+                                        {{ trans('receipts.finalized') }}
                                         @else
-                                            <span style="color:red; font-weight:bold;">TO FINALIZE</span>
+                                            <span style="color:red; font-weight:bold;">{{ trans('receipts.to_finalized') }}</span>
                                         @endif
                                     </td>
                                     <td class="td-actions text-right">

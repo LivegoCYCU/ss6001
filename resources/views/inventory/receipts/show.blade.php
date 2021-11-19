@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Manage Receipt', 'pageSlug' => 'receipts', 'section' => 'inventory'])
+@extends('layouts.app', ['page' => trans('sidebar.header.manage_receipt'), 'pageSlug' => 'receipts', 'section' => 'inventory'])
 
 
 @section('content')
@@ -10,20 +10,22 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Receipt Summary</h4>
+                            <h4 class="card-title">{{ trans('receipts.receipt_summary.header') }}</h4>
                         </div>
                         @if (!$receipt->finalized_at)
                             <div class="col-4 text-right">
                                 @if ($receipt->products->count() === 0)
-                                    <form action="{{ route('receipts.destroy', $receipt) }}" method="post" class="d-inline">
+                                    <form action="{{ route('receipts.destroy', $receipt) }}" method="post"
+                                        class="d-inline">
                                         @csrf
                                         @method('delete')
                                         <button type="submit" class="btn btn-sm btn-primary">
-                                            Delete Receipt
+                                            {{ trans('button.delete') }}
                                         </button>
                                     </form>
                                 @else
-                                    <button type="button" class="btn btn-sm btn-primary" onclick="confirm('ATTENTION: At the end of this receipt you will not be able to load more products in it.') ? window.location.replace('{{ route('receipts.finalize', $receipt) }}') : ''">
+                                    <button type="button" class="btn btn-sm btn-primary"
+                                        onclick="confirm('ATTENTION: At the end of this receipt you will not be able to load more products in it.') ? window.location.replace('{{ route('receipts.finalize', $receipt) }}') : ''">
                                         Finalize Receipt
                                     </button>
                                 @endif
@@ -34,15 +36,15 @@
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>ID</th>
-                            <th>Date</th>
-                            <th>Title</th>
-                            <th>User</th>
-                            <th>Provider</th>
-                            <th>products</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Status</th>
+                            <th>{{ trans('receipts.receipt_summary.id') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.date') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.title') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.user') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.provider') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.products') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.stock') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.defective_stock') }}</th>
+                            <th>{{ trans('receipts.receipt_summary.status') }}</th>
                         </thead>
                         <tbody>
                             <tr>
@@ -51,8 +53,9 @@
                                 <td style="max-width:150px;">{{ $receipt->title }}</td>
                                 <td>{{ $receipt->user->name }}</td>
                                 <td>
-                                    @if($receipt->provider_id)
-                                        <a href="{{ route('providers.show', $receipt->provider) }}">{{ $receipt->provider->name }}</a>
+                                    @if ($receipt->provider_id)
+                                        <a
+                                            href="{{ route('providers.show', $receipt->provider) }}">{{ $receipt->provider->name }}</a>
                                     @else
                                         N/A
                                     @endif
@@ -75,11 +78,12 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">products: {{ $receipt->products->count() }}</h4>
+                            <h4 class="card-title">{{ trans('receipts.products.counts') }}: {{ $receipt->products->count() }}</h4>
                         </div>
                         @if (!$receipt->finalized_at)
                             <div class="col-4 text-right">
-                                <a href="{{ route('receipts.product.add', ['receipt' => $receipt]) }}" class="btn btn-sm btn-primary">Add</a>
+                                <a href="{{ route('receipts.product.add', ['receipt' => $receipt]) }}"
+                                    class="btn btn-sm btn-primary">{{ trans('button.add') }}</a>
                             </div>
                         @endif
                     </div>
@@ -87,30 +91,40 @@
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>Category</th>
-                            <th>Product</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Total Stock</th>
+                            <th>{{ trans('receipts.products.category') }}</th>
+                            <th>{{ trans('receipts.products.product') }}</th>
+                            <th>{{ trans('receipts.products.stock') }}</th>
+                            <th>{{ trans('receipts.products.defective_stock') }}</th>
+                            <th>{{ trans('receipts.products.total_stock') }}</th>
                             <th></th>
                         </thead>
                         <tbody>
                             @foreach ($receipt->products as $received_product)
                                 <tr>
-                                    <td><a href="{{ route('categories.show', $received_product->product->category) }}">{{ $received_product->product->category->name }}</a></td>
-                                    <td><a href="{{ route('products.show', $received_product->product) }}">{{ $received_product->product->name }}</a></td>
+                                    <td><a
+                                            href="{{ route('categories.show', $received_product->product->category) }}">{{ $received_product->product->category->name }}</a>
+                                    </td>
+                                    <td><a
+                                            href="{{ route('products.show', $received_product->product) }}">{{ $received_product->product->name }}</a>
+                                    </td>
                                     <td>{{ $received_product->stock }}</td>
                                     <td>{{ $received_product->stock_defective }}</td>
                                     <td>{{ $received_product->stock + $received_product->stock_defective }}</td>
                                     <td class="td-actions text-right">
-                                        @if(!$receipt->finalized_at)
-                                            <a href="{{ route('receipts.product.edit', ['receipt' => $receipt, 'receivedproduct' => $received_product]) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Pedido">
+                                        @if (!$receipt->finalized_at)
+                                            <a href="{{ route('receipts.product.edit', ['receipt' => $receipt, 'receivedproduct' => $received_product]) }}"
+                                                class="btn btn-link" data-toggle="tooltip" data-placement="bottom"
+                                                title="Edit Pedido">
                                                 <i class="tim-icons icon-pencil"></i>
                                             </a>
-                                            <form action="{{ route('receipts.product.destroy', ['receipt' => $receipt, 'receivedproduct' => $received_product]) }}" method="post" class="d-inline">
+                                            <form
+                                                action="{{ route('receipts.product.destroy', ['receipt' => $receipt, 'receivedproduct' => $received_product]) }}"
+                                                method="post" class="d-inline">
                                                 @csrf
                                                 @method('delete')
-                                                <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Delete Pedido" onclick="confirm('Estás seguro que quieres eliminar este producto?') ? this.parentElement.submit() : ''">
+                                                <button type="button" class="btn btn-link" data-toggle="tooltip"
+                                                    data-placement="bottom" title="Delete Pedido"
+                                                    onclick="confirm('Estás seguro que quieres eliminar este producto?') ? this.parentElement.submit() : ''">
                                                     <i class="tim-icons icon-simple-remove"></i>
                                                 </button>
                                             </form>
