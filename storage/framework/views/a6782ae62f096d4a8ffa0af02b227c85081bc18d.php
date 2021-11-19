@@ -274,4 +274,4 @@
     </script>
 <?php $__env->stopPush(); ?>
 
-<?php echo $__env->make('layouts.app', ['pageSlug' => 'dashboard', 'page' => 'Dashboard', 'section' => ''], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/dashboard.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', ['pageSlug' => 'dashboard', 'page' => trans("sidebar.dashboard"), 'section' => ''], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/dashboard.blade.php ENDPATH**/ ?>

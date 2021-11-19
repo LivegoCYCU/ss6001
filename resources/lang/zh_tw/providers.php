@@ -18,5 +18,24 @@ return [
     'create' => '新增廠商資訊',
     'create_title' => '廠商資訊',
     'edit' => '編輯廠商資訊',
-    'show' => '廠商資訊'
+    'payment' => [
+        'payments' => '付款資訊',
+        'show' => '廠商資訊',
+        'date' => '日期',
+        'id' => '編號',
+        'title' => '標題',
+        'method' => '付款方式',
+        'amount' => '數量',
+        'reference' => '參考',
+    ],
+    "receipts" => [
+        'receipts' => '收款資訊',
+        'date' => '日期',
+        'id' => '編號',
+        'title' => '標題',
+        'products' => '商品',
+        'stock' => '庫存',
+        'defective_stock' => '耗損',
+        'total_stock' => '總庫存'
+    ]
 ];

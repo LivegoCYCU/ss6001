@@ -1,11 +1,11 @@
-@extends('layouts.app', ['page' => 'Provider Information', 'pageSlug' => 'providers', 'section' => 'providers'])
+@extends('layouts.app', ['page' => trans("providers.payment.show"), 'pageSlug' => 'providers', 'section' => 'providers'])
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">{{ trans("providers.show") }}</h4>
+                    <h4 class="card-title">{{ trans("providers.payment.show") }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
@@ -41,17 +41,17 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Latest Payments</h4>
+                    <h4 class="card-title">{{ trans('providers.payment.payments') }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>Date</th>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>Method</th>
-                            <th>Amount</th>
-                            <th>Reference</th>
+                            <th>{{ trans('providers.payment.date') }}</th>
+                            <th>{{ trans('providers.payment.id') }}</th>
+                            <th>{{ trans('providers.payment.title') }}</th>
+                            <th>{{ trans('providers.payment.method') }}</th>
+                            <th>{{ trans('providers.payment.amount') }}</th>
+                            <th>{{ trans('providers.payment.reference') }}</th>
                         </thead>
                         <tbody>
                             @foreach ($transactions as $transaction)
@@ -74,18 +74,18 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Latest Receipts</h4>
+                    <h4 class="card-title">{{ trans('providers.receipts.receipts') }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>Date</th>
-                            <th>ID</th>
-                            <th>Title</th>
-                            <th>products</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Total Stock</th>
+                            <th>{{ trans('providers.receipts.date') }}</th>
+                            <th>{{ trans('providers.receipts.id') }}</th>
+                            <th>{{ trans('providers.receipts.title') }}</th>
+                            <th>{{ trans('providers.receipts.products') }}</th>
+                            <th>{{ trans('providers.receipts.stock') }}</th>
+                            <th>{{ trans('providers.receipts.defective_stock') }}</th>
+                            <th>{{ trans('providers.receipts.total_stock') }}</th>
                             <th></th>
                         </thead>
                         <tbody>
