@@ -21,4 +21,10 @@ return [
     'OK' => 'OK',
     'cancel' => 'Cancel',
     'back' => 'Back to List',
+    'add' => 'Add',
+    'delete' => 'Delete',
+    'not_specified' => 'Not Specified',
+    'continue' => 'Continue' ,
+    'detail' => 'More Detail',
+
 ];

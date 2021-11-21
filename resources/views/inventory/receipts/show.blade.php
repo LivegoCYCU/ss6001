@@ -26,7 +26,7 @@
                                 @else
                                     <button type="button" class="btn btn-sm btn-primary"
                                         onclick="confirm('ATTENTION: At the end of this receipt you will not be able to load more products in it.') ? window.location.replace('{{ route('receipts.finalize', $receipt) }}') : ''">
-                                        Finalize Receipt
+                                        {{ trans('receipts.finalize_receipt') }}
                                     </button>
                                 @endif
                             </div>
@@ -63,7 +63,7 @@
                                 <td>{{ $receipt->products->count() }}</td>
                                 <td>{{ $receipt->products->sum('stock') }}</td>
                                 <td>{{ $receipt->products->sum('stock_defective') }}</td>
-                                <td>{!! $receipt->finalized_at ? 'Finalized' : '<span style="color:red; font-weight:bold;">TO FINALIZE</span>' !!}</td>
+                                <td>{!! $receipt->finalized_at ? trans("receipts.finalized") : '<span style="color:red; font-weight:bold;">'.trans("receipts.to_finalized").' </span>' !!}</td>
                             </tr>
                         </tbody>
                     </table>
@@ -114,7 +114,7 @@
                                         @if (!$receipt->finalized_at)
                                             <a href="{{ route('receipts.product.edit', ['receipt' => $receipt, 'receivedproduct' => $received_product]) }}"
                                                 class="btn btn-link" data-toggle="tooltip" data-placement="bottom"
-                                                title="Edit Pedido">
+                                                title="{{ trans('button.edit') }}">
                                                 <i class="tim-icons icon-pencil"></i>
                                             </a>
                                             <form
@@ -123,8 +123,8 @@
                                                 @csrf
                                                 @method('delete')
                                                 <button type="button" class="btn btn-link" data-toggle="tooltip"
-                                                    data-placement="bottom" title="Delete Pedido"
-                                                    onclick="confirm('Estás seguro que quieres eliminar este producto?') ? this.parentElement.submit() : ''">
+                                                    data-placement="bottom" title="{{ trans('button.delete') }}"
+                                                    onclick="confirm('{{trans("receipts.delete_msg")}}') ? this.parentElement.submit() : ''">
                                                     <i class="tim-icons icon-simple-remove"></i>
                                                 </button>
                                             </form>

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Client Information', 'pageSlug' => 'clients', 'section' => 'clients'])
+@extends('layouts.app', ['page' => trans('client.information'), 'pageSlug' => 'clients', 'section' => 'clients'])
 
 @section('content')
     @include('alerts.error')
@@ -6,20 +6,20 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Client Information</h4>
+                    <h4 class="card-title">{{ trans('client.information') }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Document</th>
-                            <th>Telephone</th>
-                            <th>Email</th>
-                            <th>Balance</th>
-                            <th>Purchases</th>
-                            <th>Total Payment</th>
-                            <th>Last purchase</th>
+                            <th>{{ trans('client.name') }}</th>
+                            <th>{{ trans('client.document') }}</th>
+                            <th>{{ trans('client.telephone') }}</th>
+                            <th>{{ trans('client.email') }}</th>
+                            <th>{{ trans('client.balance') }}</th>
+                            <th>{{ trans('client.purchases') }}</th>
+                            <th>{{ trans('client.total_payment') }}</th>
+                            <th>{{ trans('client.last_purchase') }}</th>
                         </thead>
                         <tbody>
                             <tr>
@@ -54,10 +54,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Latest Transactions</h4>
+                            <h4 class="card-title">{{ trans('client.latest_transaction') }}</h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('clients.transactions.add', $client) }}" class="btn btn-sm btn-primary">New Transaction</a>
+                            <a href="{{ route('clients.transactions.add', $client) }}" class="btn btn-sm btn-primary">{{ trans('client.new_transaction') }}</a>
                         </div>
                     </div>
                 </div>
@@ -65,9 +65,9 @@
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Date</th>
-                            <th>Method</th>
-                            <th>Amount</th>
+                            <th>{{ trans('client.date') }}</th>
+                            <th>{{ trans('client.method') }}</th>
+                            <th>{{ trans('client.amount') }}</th>
                         </thead>
                         <tbody>
                             @foreach ($client->transactions->reverse()->take(25) as $transaction)
@@ -89,14 +89,14 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Latest Purchases</h4>
+                            <h4 class="card-title">{{ trans('client.latest_purchase') }}</h4>
                         </div>
                         <div class="col-4 text-right">
                             <form method="post" action="{{ route('sales.store') }}">
                                 @csrf
                                 <input type="hidden" name="user_id" value="{{ Auth::id() }}">
                                 <input type="hidden" name="client_id" value="{{ $client->id }}">
-                                <button type="submit" class="btn btn-sm btn-primary">New Purchase</button>
+                                <button type="submit" class="btn btn-sm btn-primary">{{ trans('client.new_purchase') }}</button>
                             </form>
                         </div>
                     </div>
@@ -105,11 +105,11 @@
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Date</th>
-                            <th>products</th>
-                            <th>Stock</th>
-                            <th>Total Amount</th>
-                            <th>State</th>
+                            <th>{{ trans('client.date') }}</th>
+                            <th>{{ trans('client.products') }}</th>
+                            <th>{{ trans('client.stock') }}</th>
+                            <th>{{ trans('client.total_amount') }}</th>
+                            <th>{{ trans('client.state') }}</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -120,9 +120,9 @@
                                     <td>{{ $sale->products->count() }}</td>
                                     <td>{{ $sale->products->sum('qty') }}</td>
                                     <td>{{ format_money($sale->products->sum('total_amount')) }}</td>
-                                    <td>{{ ($sale->finalized_at) ? 'FINISHED' : 'ON HOLD' }}</td>
+                                    <td>{{ ($sale->finalized_at) ? trans('client.finished') : trans('client.on_hold') }}</td>
                                     <td class="td-actions text-right">
-                                        <a href="{{ route('sales.show', $sale) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
+                                        <a href="{{ route('sales.show', $sale) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{trans('button.detail')}}">
                                             <i class="tim-icons icon-zoom-split"></i>
                                         </a>
                                     </td>

@@ -38,5 +38,7 @@ return [
     'to_finalized' => '尚未完成',
     'finalized' => '完成',
     'receipt_information' => '收據資訊',
+    'finalize_receipt' => '完成收據',
+    'delete_msg' => '您確定要刪除此產品嗎？',
     
 ];

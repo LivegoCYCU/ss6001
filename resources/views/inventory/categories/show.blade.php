@@ -1,21 +1,21 @@
-@extends('layouts.app', ['page' => 'Category Information', 'pageSlug' => 'categories', 'section' => 'inventory'])
+@extends('layouts.app', ['page' =>  trans("category.information"), 'pageSlug' => 'categories', 'section' => 'inventory'])
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Category Information</h4>
+                    <h4 class="card-title">{{ trans("category.information") }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>products</th>
-                            <th>Stocks</th>
-                            <th>Stocks Faulty</th>
-                            <th>Average Price</th>
+                            <th>{{ trans("category.name") }}</th>
+                            <th>{{ trans("category.products") }}</th>
+                            <th>{{ trans("category.stocks") }}</th>
+                            <th>{{ trans("category.stocks_faulty") }}</th>
+                            <th>{{ trans("category.average_price") }}</th>
                         </thead>
                         <tbody>
                             <tr>
@@ -36,19 +36,19 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">products: {{ $products->count() }}</h4>
+                    <h4 class="card-title">{{ trans("category.products") }}: {{ $products->count() }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Name</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Base price</th>
-                            <th>Average Price</th>
-                            <th>Total sales</th>
-                            <th>Income Produced</th>
+                            <th>{{ trans("category.name") }}</th>
+                            <th>{{ trans("category.stock") }}</th>
+                            <th>{{ trans("category.defective_stock") }}</th>
+                            <th>{{ trans("category.base_price") }}</th>
+                            <th>{{ trans("category.average_price") }}</th>
+                            <th>{{ trans("category.total_sales") }}</th>
+                            <th>{{ trans("category.income_produced") }}</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -63,7 +63,7 @@
                                     <td>{{ $product->solds->sum('qty') }}</td>
                                     <td>{{ format_money($product->solds->sum('total_amount')) }}</td>
                                     <td class="td-actions text-right">
-                                        <a href="{{ route('products.show', $product) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
+                                        <a href="{{ route('products.show', $product) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{trans('button.detail')}}">
                                             <i class="tim-icons icon-zoom-split"></i>
                                         </a>
                                     </td>

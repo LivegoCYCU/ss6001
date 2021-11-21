@@ -5,18 +5,18 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics by Quantity (TOP 15)</h4>
+                    <h4 class="card-title"><?php echo e(trans('inventory.title_quantity')); ?> (TOP 15)</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Category</th>
-                            <th>Name</th>
-                            <th>Stock</th>
-                            <th>Annual Sales</th>
-                            <th>Average Price</th>
-                            <th>Annual Income</th>
+                            <th><?php echo e(trans('inventory.category')); ?></th>
+                            <th><?php echo e(trans('inventory.name')); ?></th>
+                            <th><?php echo e(trans('inventory.stock')); ?></th>
+                            <th><?php echo e(trans('inventory.annual_sales')); ?></th>
+                            <th><?php echo e(trans('inventory.average_price')); ?></th>
+                            <th><?php echo e(trans('inventory.annual_income')); ?></th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -46,17 +46,17 @@
         <div class="col-md-6">
             <div class="card card-tasks">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics by Income (TOP 15)</h4>
+                    <h4 class="card-title"><?php echo e(trans('inventory.title_income')); ?> (TOP 15)</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
                         <table class="table">
                             <thead>
                                 <th>ID</th>
-                                <th>Category</th>
-                                <th>Name</th>
-                                <th>Sold</th>
-                                <th>Income</th>
+                                <th><?php echo e(trans('inventory.category')); ?></th>
+                                <th><?php echo e(trans('inventory.name')); ?></th>
+                                <th><?php echo e(trans('inventory.sold')); ?></th>
+                                <th><?php echo e(trans('inventory.income')); ?></th>
                             </thead>
                             <tbody>
                                 <?php $__currentLoopData = $soldproductsbyincomes; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $soldproduct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -77,17 +77,17 @@
         <div class="col-md-6">
             <div class="card card-tasks">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics by Average Price (TOP 15)</h4>
+                    <h4 class="card-title"><?php echo e(trans('inventory.title_avg_price')); ?> (TOP 15)</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
                         <table class="table">
                             <thead>
                                 <th>ID</th>
-                                <th>Category</th>
-                                <th>Name</th>
-                                <th>Sold</th>
-                                <th>Average Price</th>
+                                <th><?php echo e(trans('inventory.category')); ?></th>
+                                <th><?php echo e(trans('inventory.name')); ?></th>
+                                <th><?php echo e(trans('inventory.sold')); ?></th>
+                                <th><?php echo e(trans('inventory.average_price')); ?></th>
                             </thead>
                             <tbody>
                                 <?php $__currentLoopData = $soldproductsbyavgprice; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $soldproduct): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
@@ -107,4 +107,4 @@
         </div>
     </div>
 <?php $__env->stopSection(); ?>
-<?php echo $__env->make('layouts.app', ['page' => 'Inventory Statistics', 'pageSlug' => 'istats', 'section' => 'inventory'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/inventory/stats.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', ['page' => trans('sidebar.header.inventory_statistics'), 'pageSlug' => 'istats', 'section' => 'inventory'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/inventory/stats.blade.php ENDPATH**/ ?>

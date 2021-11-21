@@ -1,22 +1,22 @@
-@extends('layouts.app', ['page' => 'Inventory Statistics', 'pageSlug' => 'istats', 'section' => 'inventory'])
+@extends('layouts.app', ['page' => trans('sidebar.header.inventory_statistics'), 'pageSlug' => 'istats', 'section' => 'inventory'])
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics by Quantity (TOP 15)</h4>
+                    <h4 class="card-title">{{trans('inventory.title_quantity')}} (TOP 15)</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Category</th>
-                            <th>Name</th>
-                            <th>Stock</th>
-                            <th>Annual Sales</th>
-                            <th>Average Price</th>
-                            <th>Annual Income</th>
+                            <th>{{trans('inventory.category')}}</th>
+                            <th>{{trans('inventory.name')}}</th>
+                            <th>{{trans('inventory.stock')}}</th>
+                            <th>{{trans('inventory.annual_sales')}}</th>
+                            <th>{{trans('inventory.average_price')}}</th>
+                            <th>{{trans('inventory.annual_income')}}</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -46,17 +46,17 @@
         <div class="col-md-6">
             <div class="card card-tasks">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics by Income (TOP 15)</h4>
+                    <h4 class="card-title">{{trans('inventory.title_income')}} (TOP 15)</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
                         <table class="table">
                             <thead>
                                 <th>ID</th>
-                                <th>Category</th>
-                                <th>Name</th>
-                                <th>Sold</th>
-                                <th>Income</th>
+                                <th>{{trans('inventory.category')}}</th>
+                                <th>{{trans('inventory.name')}}</th>
+                                <th>{{trans('inventory.sold')}}</th>
+                                <th>{{trans('inventory.income')}}</th>
                             </thead>
                             <tbody>
                                 @foreach ($soldproductsbyincomes as $soldproduct)
@@ -77,17 +77,17 @@
         <div class="col-md-6">
             <div class="card card-tasks">
                 <div class="card-header">
-                    <h4 class="card-title">Statistics by Average Price (TOP 15)</h4>
+                    <h4 class="card-title">{{trans('inventory.title_avg_price')}} (TOP 15)</h4>
                 </div>
                 <div class="card-body">
                     <div class="table-full-width table-responsive">
                         <table class="table">
                             <thead>
                                 <th>ID</th>
-                                <th>Category</th>
-                                <th>Name</th>
-                                <th>Sold</th>
-                                <th>Average Price</th>
+                                <th>{{trans('inventory.category')}}</th>
+                                <th>{{trans('inventory.name')}}</th>
+                                <th>{{trans('inventory.sold')}}</th>
+                                <th>{{trans('inventory.average_price')}}</th>
                             </thead>
                             <tbody>
                                 @foreach ($soldproductsbyavgprice as $soldproduct)

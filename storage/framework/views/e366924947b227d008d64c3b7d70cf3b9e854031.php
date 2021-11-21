@@ -7,10 +7,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Products</h4>
+                            <h4 class="card-title"><?php echo e(trans('inventory.product')); ?></h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="<?php echo e(route('products.create')); ?>" class="btn btn-sm btn-primary">New product</a>
+                            <a href="<?php echo e(route('products.create')); ?>" class="btn btn-sm btn-primary"><?php echo e(trans('inventory.new_product')); ?></a>
                         </div>
                     </div>
                 </div>
@@ -20,12 +20,12 @@
                     <div class="">
                         <table class="table tablesorter " id="">
                             <thead class=" text-primary">
-                                <th scope="col">Category</th>
-                                <th scope="col">Product</th>
-                                <th scope="col">Base Price</th>
-                                <th scope="col">Stock</th>
-                                <th scope="col">Faulty</th>
-                                <th scope="col">Total Sold</th>
+                                <th scope="col"><?php echo e(trans('inventory.category')); ?></th>
+                                <th scope="col"><?php echo e(trans('inventory.product')); ?></th>
+                                <th scope="col"><?php echo e(trans('inventory.base_price')); ?></th>
+                                <th scope="col"><?php echo e(trans('inventory.stock')); ?></th>
+                                <th scope="col"><?php echo e(trans('inventory.faulty')); ?></th>
+                                <th scope="col"><?php echo e(trans('inventory.total_sold')); ?></th>
                                 <th scope="col"></th>
                             </thead>
                             <tbody>
@@ -38,16 +38,16 @@
                                         <td><?php echo e($product->stock_defective); ?></td>
                                         <td><?php echo e($product->solds->sum('qty')); ?></td>
                                         <td class="td-actions text-right">
-                                            <a href="<?php echo e(route('products.show', $product)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
+                                            <a href="<?php echo e(route('products.show', $product)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="<?php echo e(trans('inventory.more')); ?>">
                                                 <i class="tim-icons icon-zoom-split"></i>
                                             </a>
-                                            <a href="<?php echo e(route('products.edit', $product)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Product">
+                                            <a href="<?php echo e(route('products.edit', $product)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="<?php echo e(trans('inventory.edit')); ?>">
                                                 <i class="tim-icons icon-pencil"></i>
                                             </a>
                                             <form action="<?php echo e(route('products.destroy', $product)); ?>" method="post" class="d-inline">
                                                 <?php echo csrf_field(); ?>
                                                 <?php echo method_field('delete'); ?>
-                                                <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Delete Product" onclick="confirm('Are you sure you want to remove this product? The records that contain it will continue to exist.') ? this.parentElement.submit() : ''">
+                                                <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="<?php echo e(trans('inventory.delete')); ?>" onclick="confirm('Are you sure you want to remove this product? The records that contain it will continue to exist.') ? this.parentElement.submit() : ''">
                                                     <i class="tim-icons icon-simple-remove"></i>
                                                 </button>
                                             </form>
@@ -69,4 +69,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', ['page' => 'List of Products', 'pageSlug' => 'products', 'section' => 'inventory'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/inventory/products/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', ['page' => trans('sidebar.header.list_of_products'), 'pageSlug' => 'products', 'section' => 'inventory'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/inventory/products/index.blade.php ENDPATH**/ ?>

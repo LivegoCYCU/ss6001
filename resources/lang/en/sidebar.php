@@ -36,5 +36,9 @@ return [
         'new_receipt' => 'New Receipt',
         'add_product' => 'Add Product',
         'edit_product' => 'Edit Product',
+        'inventory_statistics' => 'Inventory Statistics',
+        'list_of_products' => 'LIST OF PRODUCTS',
+        'category' => 'Category',
+        'manage_sale' => 'Manage Sale',
     ]
 ];

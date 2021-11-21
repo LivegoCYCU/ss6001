@@ -7,10 +7,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Categories</h4>
+                            <h4 class="card-title"><?php echo e(trans('category.categories')); ?></h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="<?php echo e(route('categories.create')); ?>" class="btn btn-sm btn-primary">New Category</a>
+                            <a href="<?php echo e(route('categories.create')); ?>" class="btn btn-sm btn-primary"><?php echo e(trans('category.new')); ?></a>
                         </div>
                     </div>
                 </div>
@@ -20,11 +20,11 @@
                     <div class="">
                         <table class="table tablesorter " id="">
                             <thead class=" text-primary">
-                                <th scope="col">Name</th>
-                                <th scope="col">products</th>
-                                <th scope="col">Total Stock</th>
-                                <th scope="col">Defective Stock</th>
-                                <th scope="col">Average Price of Product</th>
+                                <th scope="col"><?php echo e(trans('category.name')); ?></th>
+                                <th scope="col"><?php echo e(trans('category.products')); ?></th>
+                                <th scope="col"><?php echo e(trans('category.total_stock')); ?></th>
+                                <th scope="col"><?php echo e(trans('category.defective_stock')); ?></th>
+                                <th scope="col"><?php echo e(trans('category.average_price')); ?></th>
                                 <th scope="col"></th>
                             </thead>
                             <tbody>
@@ -36,16 +36,16 @@
                                         <td><?php echo e($category->products->sum('stock_defective')); ?></td>
                                         <td><?php echo e(format_money($category->products->avg('price'))); ?></td>
                                         <td class="td-actions text-right">
-                                            <a href="<?php echo e(route('categories.show', $category)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
+                                            <a href="<?php echo e(route('categories.show', $category)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="<?php echo e(trans('button.detail')); ?>">
                                                 <i class="tim-icons icon-zoom-split"></i>
                                             </a>
-                                            <a href="<?php echo e(route('categories.edit', $category)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Category">
+                                            <a href="<?php echo e(route('categories.edit', $category)); ?>" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="<?php echo e(trans('button.edit')); ?>">
                                                 <i class="tim-icons icon-pencil"></i>
                                             </a>
                                             <form action="<?php echo e(route('categories.destroy', $category)); ?>" method="post" class="d-inline">
                                                 <?php echo csrf_field(); ?>
                                                 <?php echo method_field('delete'); ?>
-                                                <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Delete Category" onclick="confirm('Are you sure you want to delete this category? All products belonging to it will be deleted and the records that contain it will not be accurate.') ? this.parentElement.submit() : ''">
+                                                <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="<?php echo e(trans('button.delete')); ?>" onclick="confirm('<?php echo e(trans('category.delete_msg')); ?>') ? this.parentElement.submit() : ''">
                                                     <i class="tim-icons icon-simple-remove"></i>
                                                 </button>
                                             </form>
@@ -67,4 +67,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', ['page' => 'List of Categories', 'pageSlug' => 'categories', 'section' => 'inventory'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/inventory/categories/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', ['page' => trans('category.title'), 'pageSlug' => 'categories', 'section' => 'inventory'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/inventory/categories/index.blade.php ENDPATH**/ ?>

@@ -1,24 +1,24 @@
-@extends('layouts.app', ['page' => 'Product Information', 'pageSlug' => 'products', 'section' => 'inventory'])
+@extends('layouts.app', ['page' => trans('inventory.information'), 'pageSlug' => 'products', 'section' => 'inventory'])
 
 @section('content')
     <div class="row">
         <div class="col-md-12">
             <div class="card">
                 <div class="card-header">
-                    <h4 class="card-title">Product Information</h4>
+                    <h4 class="card-title">{{ trans('inventory.information') }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
                             <th>ID</th>
-                            <th>Category</th>
-                            <th>Name</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Base price</th>
-                            <th>Average Price</th>
-                            <th>Total sales</th>
-                            <th>Income Produced</th>
+                            <th>{{ trans('inventory.category') }}</th>
+                            <th>{{ trans('inventory.name') }}</th>
+                            <th>{{ trans('inventory.stock') }}</th>
+                            <th>{{ trans('inventory.defective_stock') }}</th>
+                            <th>{{ trans('inventory.base_price') }}</th>
+                            <th>{{ trans('inventory.average_price') }}</th>
+                            <th>{{ trans('inventory.total_sales') }}</th>
+                            <th>{{ trans('inventory.income_produced') }}</th>
                         </thead>
                         <tbody>
                             <tr>
@@ -43,16 +43,16 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Latest Sales</h4>
+                    <h4 class="card-title">{{ trans('inventory.latest_sales') }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>Date</th>
-                            <th>Sale ID</th>
-                            <th>Quantity</th>
-                            <th>Price Unit</th>
-                            <th>Total Amount</th>
+                            <th>{{ trans('inventory.date') }}</th>
+                            <th>{{ trans('inventory.sale_id') }}</th>
+                            <th>{{ trans('inventory.quantity') }}</th>
+                            <th>{{ trans('inventory.price_unit') }}</th>
+                            <th>{{ trans('inventory.total_amount') }}</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -81,17 +81,17 @@
         <div class="col-md-12">
             <div class="card">
                 <div class="card-body">
-                    <h4 class="card-title">Latest Receipts</h4>
+                    <h4 class="card-title">{{ trans('inventory.latest_receipts') }}</h4>
                 </div>
                 <div class="card-body">
                     <table class="table">
                         <thead>
-                            <th>Date</th>
-                            <th>Receipt ID</th>
-                            <th>Title</th>
-                            <th>Stock</th>
-                            <th>Defective Stock</th>
-                            <th>Total Stock</th>
+                            <th>{{ trans('inventory.date') }}</th>
+                            <th>{{ trans('inventory.receipt_id') }}</th>
+                            <th>{{ trans('inventory.inventory_title') }}</th>
+                            <th>{{ trans('inventory.stock') }}</th>
+                            <th>{{ trans('inventory.defective_stock') }}</th>
+                            <th>{{ trans('inventory.total_stock') }}</th>
                             <th></th>
                         </thead>
                         <tbody>
@@ -104,7 +104,7 @@
                                     <td>{{ $received->stock_defective }}</td>
                                     <td>{{ $received->stock + $received->stock_defective }}</td>
                                     <td class="td-actions text-right">
-                                        <a href="{{ route('receipts.show', $received->receipt) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Ver Receipt">
+                                        <a href="{{ route('receipts.show', $received->receipt) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{trans("inventory.ver_receipt")}}">
                                             <i class="tim-icons icon-zoom-split"></i>
                                         </a>
                                     </td>
