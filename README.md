@@ -1,5 +1,5 @@
 # 誠冨寵物商行
-<small>This repo is based on the laravel-inventory series by [@sanz]("https://github.com/sanz")</small>
+<small>This repo is based on the laravel-inventory series by <a href="https://github.com/sanz">@sanz</a></small>
 
 
 <center>
@@ -9,18 +9,13 @@
 <center>
 <a>
     <img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red">
-</a>
-<a>
-    <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue">
-</a>
-<a>
-    <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive">
-</a>
-<a>
-    <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
+     <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue">
+     <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive">
+       <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
 </a>
 
-<h2 style="margin-top:1.3rem">中文。English</h4>
+
+<h2 style="margin-top:1.3rem">中文．English</h4>
 
 </center>
 
@@ -43,6 +38,6 @@
 
 
 ## Used
-* laravel-inventory by [@sanz]("https://github.com/sanz")
-* Enum by [@BenSampo]('https://github.com/BenSampo/laravel-enum)
-* debug-bar by [@VictoRD11 ]("https://github.com/barryvdh/laravel-debugbar")
+* laravel-inventory by <a href="https://github.com/sanz">@sanz</a>
+* Enum by  <a href="https://github.com/BenSampo/laravel-enum">@BenSampo</a>
+* debug-bar by <a href="https://github.com/barryvdh/laravel-debugbar">@VictoRD11</a>
