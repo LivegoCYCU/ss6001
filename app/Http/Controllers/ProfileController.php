@@ -28,7 +28,8 @@ class ProfileController extends Controller
     {
         auth()->user()->update($request->all());
 
-        return back()->withStatus('Profile successfully updated.');
+        return back()
+            ->withStatus(trans('message.updated',  ['title' => trans('sidebar.users.profile')]));
     }
 
     /**
@@ -41,6 +42,7 @@ class ProfileController extends Controller
     {
         auth()->user()->update(['password' => Hash::make($request->get('password'))]);
 
-        return back()->withPasswordStatus('Password successfully updated.');
+        return back()
+            ->withStatus(trans('message.updated',  ['title' => trans('register.password')]));
     }
 }

@@ -41,11 +41,15 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request, Product $model)
     {
+        // shopee item id get from item url 
+        $request->request->add(['shopee_item_id' => explode(".", $request->get('shopee_item_url'))[3]]);
+
         $model->create($request->all());
 
         return redirect()
             ->route('products.index')
-            ->withStatus('Product successfully registered.');
+            ->withStatus(trans('message.registered' ,  ['title' => trans('inventory.product')]));
+
     }
 
     /**
@@ -89,7 +93,7 @@ class ProductController extends Controller
 
         return redirect()
             ->route('products.index')
-            ->withStatus('Product updated successfully.');
+            ->withStatus(trans('message.updated' ,  ['title' => trans('inventory.product')]));
     }
 
     /**
@@ -104,6 +108,6 @@ class ProductController extends Controller
 
         return redirect()
             ->route('products.index')
-            ->withStatus('Product removed successfully.');
+            ->withStatus(trans('message.registered' ,  ['title' => trans('inventory.product')]));
     }
 }

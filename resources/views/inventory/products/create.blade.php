@@ -40,7 +40,11 @@
                                     </select>
                                     @include('alerts.feedback', ['field' => 'product_category_id'])
                                 </div>
-
+                                <div class="form-group{{ $errors->has('shopee_item_url') ? ' has-danger' : '' }}">
+                                    <label class="form-control-label" for="input-shopee_item_url">{{ trans('inventory.shopee_item_url') }}</label>
+                                    <input type="text" name="shopee_item_url" id="input-shopee_item_url" class="form-control form-control-alternative" placeholder="Shopee_item_url" value="{{ old('shopee_item_url') }}" required>
+                                    @include('alerts.feedback', ['field' => 'shopee_item_url'])
+                                </div>
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">{{ trans('inventory.description') }}</label>
                                     <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="Description" value="{{ old('description') }}" required>
@@ -71,7 +75,7 @@
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">Save</button>
+                                    <button type="submit" class="btn btn-success mt-4">{{ trans('button.save') }}</button>
                                 </div>
                             </div>
                         </form>

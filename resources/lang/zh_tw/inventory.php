@@ -50,4 +50,5 @@ return [
     'total_stock' => '總庫存',
     'inventory_title' => '收據抬頭',
     'ver_receipt' => '查看該筆收據',
+    'shopee_item_url' => '蝦皮商品連結',
 ];

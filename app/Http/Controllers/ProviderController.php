@@ -43,7 +43,8 @@ class ProviderController extends Controller
 
         return redirect()
             ->route('providers.index')
-            ->withStatus('Successfully Registered Vendor.');
+            ->withStatus(trans('message.registered',  ['title' => trans('providers.company')]));
+
     }
 
     /**
@@ -86,7 +87,8 @@ class ProviderController extends Controller
 
         return redirect()
             ->route('providers.index')
-            ->withStatus('Provider updated successfully.');
+            ->withStatus(trans('message.updated',  ['title' => trans('providers.company')]));
+
     }
 
     /**
@@ -101,6 +103,7 @@ class ProviderController extends Controller
 
         return redirect()
             ->route('providers.index')
-            ->withStatus('Provider removed successfully.');
+            ->withStatus(trans('message.removed',  ['title' => trans('providers.company')]));
+
     }
 }

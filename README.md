@@ -7,12 +7,19 @@
 </center>
 
 <center>
-<a>
-    <img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red">
-     <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue">
-     <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive">
-       <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
-</a>
+
+<p style="display:inline-block"><img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red">
+</p>
+<p style="display:inline-block">
+<img src="https://img.shields.io/static/v1?label=php&message=8&color=blue">
+</p>
+<p style="display:inline-block">
+<img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive">
+</p>
+<p style="display:inline-block">
+<img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
+</p>
+
 
 
 <h2 style="margin-top:1.3rem">中文．English</h4>
@@ -30,11 +37,12 @@
 
 ## Installation
 1. clone this repo 
-2. ```composer install```
+2. ```composer install``` or ```composer install --ignore-platform-reqs```
 3. ```cp``` .env.example .env
-4. ```php artisan migrate```
-5. ```php artisan key:generate```
-6. ```php artisan storage:link```
+<!-- 4. ```barryvdh/laravel-debugbar:^2.1 ``` -->
+5. ```php artisan migrate```
+6. ```php artisan key:generate```
+7. ```php artisan storage:link```
 
 
 ## Used
