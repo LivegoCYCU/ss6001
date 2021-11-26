@@ -8,10 +8,16 @@ use App\Transaction;
 use App\PaymentMethod;
 use Illuminate\Http\Request;
 use App\Http\Requests\ClientRequest;
-use App\Enums\ClientType;
+use App\Services\ClientService;
 
 class ClientController extends Controller
 {
+
+    public function __construct(ClientService $clientService)
+    {
+        $this->clientService = $clientService;
+    }
+
     /**
      * Display a listing of the resource.
      *
@@ -31,7 +37,9 @@ class ClientController extends Controller
      */
     public function create()
     {
-        return view('clients.create');
+        $clientType = $this->clientService->getClientTypeList();
+
+        return view('clients.create', [ 'clientType' => $clientType ]);
     }
 
     /**
@@ -66,7 +74,9 @@ class ClientController extends Controller
      */
     public function edit(Client $client)
     {   
-        return view('clients.edit', compact('client'));
+        $clientType = $this->clientService->getClientTypeList();
+
+        return view('clients.edit', compact('client') , [ 'clientType' => $clientType ] );
     }
 
     /**

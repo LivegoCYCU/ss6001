@@ -28,14 +28,14 @@
                                     @include('alerts.feedback', ['field' => 'name'])
                                 </div>
                                 <div class="row">
-                                    <div class="col-1">
+                                    <div class="col-4">
                                         <label class="form-control-label" for="input-document_type">{{ trans('client.type') }}</label>
                                         <select name="document_type" id="input-document_type" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" required>
-                                            @foreach (['V', 'E', 'P', 'RIF'] as $document_type)
-                                                @if($document_type == old('document') or $document_type == $client->document_type)
-                                                    <option value="{{$document_type}}" selected>{{$document_type}}</option>
+                                            @foreach ($clientType as $title => $document_type)
+                                                @if($title == old('document') or $title == $client->document_type)
+                                                    <option value="{{$title}}" selected>{{$document_type}}</option>
                                                 @else
-                                                    <option value="{{$document_type}}">{{$document_type}}</option>
+                                                    <option value="{{$title}}">{{$document_type}}</option>
                                                 @endif
                                             @endforeach
 

@@ -44,4 +44,9 @@ return [
     'purchases' => '購買',
     'finished' => '完成',
     'on_hold' => '代辦',
+    'shopee' => '蝦皮',
+    'advertisement' => '廣告用戶',
+    'shop' => '來店客',
+    'ubereat' => 'Uber eat',
+    'foodpanda' => '熊貓',
 ];

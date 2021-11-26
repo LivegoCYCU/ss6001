@@ -44,4 +44,9 @@ return [
     'purchases' => 'Purchases',
     'finished' => 'FINISHED',
     'on_hold' => 'ON HOLD',
+    'shopee' => 'Shopee',
+    'advertisement' => 'Advertisement',
+    'shop' => 'Shop',
+    'ubereat' => 'Uber eat',
+    'foodpanda' => 'Foodpanda',
 ];

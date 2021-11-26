@@ -11,7 +11,9 @@ use BenSampo\Enum\Enum;
  */
 final class ClientType extends Enum
 {
-    const OptionOne =   0;
-    const OptionTwo =   1;
-    const OptionThree = 2;
+    const SHOPEE = 1;
+    const ADVERTISEMENT = 2;
+    const SHOPE = 3;
+    const UBEREAT = 4;
+    const FOODPANDA = 5;
 }
