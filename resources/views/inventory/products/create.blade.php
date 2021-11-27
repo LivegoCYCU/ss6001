@@ -23,7 +23,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group{{ $errors->has('name') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-name">{{ trans('inventory.name') }}</label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="Name" value="{{ old('name') }}" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative{{ $errors->has('name') ? ' is-invalid' : '' }}" placeholder="{{ trans('inventory.name') }}" value="{{ old('name') }}" required autofocus>
                                     @include('alerts.feedback', ['field' => 'name'])
                                 </div>
 
@@ -42,36 +42,43 @@
                                 </div>
                                 <div class="form-group{{ $errors->has('shopee_item_url') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-shopee_item_url">{{ trans('inventory.shopee_item_url') }}</label>
-                                    <input type="text" name="shopee_item_url" id="input-shopee_item_url" class="form-control form-control-alternative" placeholder="Shopee_item_url" value="{{ old('shopee_item_url') }}" required>
+                                    <input type="text" name="shopee_item_url" id="input-shopee_item_url" class="form-control form-control-alternative" placeholder="{{ trans('inventory.shopee_item_url') }}" value="{{ old('shopee_item_url') }}" >
                                     @include('alerts.feedback', ['field' => 'shopee_item_url'])
                                 </div>
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">{{ trans('inventory.description') }}</label>
-                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="Description" value="{{ old('description') }}" required>
+                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="{{ trans('inventory.description') }}" value="{{ old('description') }}" >
                                     @include('alerts.feedback', ['field' => 'description'])
                                 </div>
                                 <div class="row">
-                                    <div class="col-4">                                    
+                                    <div class="col-3">                                    
                                         <div class="form-group{{ $errors->has('stock') ? ' has-danger' : '' }}">
                                             <label class="form-control-label" for="input-stock">{{ trans('inventory.stock') }}</label>
-                                            <input type="number" name="stock" id="input-stock" class="form-control form-control-alternative" placeholder="Stock" value="{{ old('stock') }}" required>
+                                            <input type="number" name="stock" id="input-stock" class="form-control form-control-alternative" placeholder="{{ trans('inventory.stock') }}" value="{{ old('stock') }}" required>
                                             @include('alerts.feedback', ['field' => 'stock'])
                                         </div>
                                     </div>                            
-                                    <div class="col-4">                                    
+                                    <div class="col-3">                                    
                                         <div class="form-group{{ $errors->has('stock_defective') ? ' has-danger' : '' }}">
                                             <label class="form-control-label" for="input-stock_defective">{{ trans('inventory.defective_stock') }}</label>
-                                            <input type="number" name="stock_defective" id="input-stock_defective" class="form-control form-control-alternative" placeholder="Defective Stock" value="{{ old('stock_defective') }}" required>
+                                            <input type="number" name="stock_defective" id="input-stock_defective" class="form-control form-control-alternative" placeholder="{{ trans('inventory.defective_stock') }}" value="{{ old('stock_defective') }}" required>
                                             @include('alerts.feedback', ['field' => 'stock_defective'])
                                         </div>
                                     </div>
-                                    <div class="col-4">                                    
+                                    <div class="col-3">                                    
                                         <div class="form-group{{ $errors->has('price') ? ' has-danger' : '' }}">
                                             <label class="form-control-label" for="input-price">{{ trans('inventory.price') }}</label>
-                                            <input type="number" step=".01" name="price" id="input-price" class="form-control form-control-alternative" placeholder="Price" value="{{ old('price') }}" required>
+                                            <input type="number" step=".01" name="price" id="input-price" class="form-control form-control-alternative" placeholder="{{ trans('inventory.price') }}" value="{{ old('price') }}" required>
                                             @include('alerts.feedback', ['field' => 'price'])
                                         </div>
-                                    </div>                            
+                                    </div>           
+                                    <div class="col-3">                                    
+                                        <div class="form-group{{ $errors->has('cost') ? ' has-danger' : '' }}">
+                                            <label class="form-control-label" for="input-cost">{{ trans('inventory.cost') }}</label>
+                                            <input type="number" step=".00" name="cost" id="input-cost" class="form-control form-control-alternative" placeholder="{{ trans('inventory.cost') }}" value="{{ old('cost') }}" required>
+                                            @include('alerts.feedback', ['field' => 'cost'])
+                                        </div>
+                                    </div>                    
                                 </div>
 
                                 <div class="text-center">

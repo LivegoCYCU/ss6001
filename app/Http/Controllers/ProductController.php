@@ -5,9 +5,14 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\ProductCategory;
 use App\Http\Requests\ProductRequest;
+use App\Services\ProductService;
 
 class ProductController extends Controller
 {
+    public function __construct(ProductService $productService)
+    {
+        $this->productService = $productService;
+    }
     /**
      * Display a listing of the resource.
      *
@@ -42,14 +47,15 @@ class ProductController extends Controller
     public function store(ProductRequest $request, Product $model)
     {
         // shopee item id get from item url 
-        $request->request->add(['shopee_item_id' => explode(".", $request->get('shopee_item_url'))[3]]);
+        $request->request->add(['shopee_item_id' => explode(".", $request->get('shopee_item_url'))[3]?? null] );
+        $request->request->add(['shopee_shope_id' => explode(".", $request->get('shopee_item_url'))[2]?? null]);
+        $this->productService->createShopeeModels($request->request);
 
         $model->create($request->all());
 
         return redirect()
             ->route('products.index')
-            ->withStatus(trans('message.registered' ,  ['title' => trans('inventory.product')]));
-
+            ->withStatus(trans('message.registered',  ['title' => trans('inventory.product')]));
     }
 
     /**
@@ -93,7 +99,7 @@ class ProductController extends Controller
 
         return redirect()
             ->route('products.index')
-            ->withStatus(trans('message.updated' ,  ['title' => trans('inventory.product')]));
+            ->withStatus(trans('message.updated',  ['title' => trans('inventory.product')]));
     }
 
     /**
@@ -108,6 +114,6 @@ class ProductController extends Controller
 
         return redirect()
             ->route('products.index')
-            ->withStatus(trans('message.registered' ,  ['title' => trans('inventory.product')]));
+            ->withStatus(trans('message.removed',  ['title' => trans('inventory.product')]));
     }
 }

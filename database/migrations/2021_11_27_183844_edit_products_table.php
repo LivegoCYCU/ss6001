@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class UpdateProductTable extends Migration
+class EditProductsTable extends Migration
 {
     /**
      * Run the migrations.
@@ -14,8 +14,8 @@ class UpdateProductTable extends Migration
     public function up()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->text('shopee_item_id')->nullable();
-            $table->text('shopee_item_url')->nullable();
+            $table->decimal('cost')->default(0.00);
+            $table->text('shopee_model_id')->nullable();
         });
     }
 
@@ -27,8 +27,8 @@ class UpdateProductTable extends Migration
     public function down()
     {
         Schema::table('products', function (Blueprint $table) {
-            $table->dropColumn('shopee_item_id');
-            $table->dropColumn('shopee_item_url');
+            $table->dropColumn('cost');
+            $table->dropColumn('shopee_model_id');
         });
     }
 }
