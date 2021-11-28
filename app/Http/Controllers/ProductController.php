@@ -5,24 +5,28 @@ namespace App\Http\Controllers;
 use App\Product;
 use App\ProductCategory;
 use App\Http\Requests\ProductRequest;
+use Illuminate\Http\Request;
 use App\Services\ProductService;
+use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
-    public function __construct(ProductService $productService)
+    public function __construct(ProductService $productService ,ProductRepository $productRepository)
     {
         $this->productService = $productService;
+        $this->productRepository = $productRepository;
     }
     /**
      * Display a listing of the resource.
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $products = Product::paginate(25);
+        $products =  $this->productRepository->getProductByConditions($request);
+        $categories = ProductCategory::get();
 
-        return view('inventory.products.index', compact('products'));
+        return view('inventory.products.index', compact('products') , [ 'categories' => $categories , 'request' => $request]);        
     }
 
     /**
@@ -38,6 +42,39 @@ class ProductController extends Controller
     }
 
     /**
+     * Show the form for creating a new resource.
+     *
+     * @return \Illuminate\Http\Response
+     */
+    public function create_shopee()
+    {
+        $categories = ProductCategory::all();
+
+        return view('inventory.products.create_shopee', compact('categories'));
+    }
+
+    /**
+     * Store a newly created resource in storage.
+     *
+     * @param   Illuminate\Http\Request;
+     * @return \Illuminate\Http\Response
+     */
+    public function store_shopee(Request $request)
+    {   
+        // shopee item id get from item url 
+        $explode_shopee_url = explode(".", $request->get('shopee_item_url'));
+        $len_url = count($explode_shopee_url);
+        $request->request->add(['shopee_item_id' => $explode_shopee_url[$len_url-1]] );
+        $request->request->add(['shopee_shope_id' => $explode_shopee_url[$len_url-2]]);
+
+        $this->productService->createShopeeModels($request->request);
+
+        return redirect()
+            ->route('products.index')
+            ->withStatus(trans('message.registered',  ['title' => trans('inventory.product')]));
+    }
+
+    /**
      * Store a newly created resource in storage.
      *
      * @param  App\Http\Requests\ProductRequest  $request
@@ -46,10 +83,11 @@ class ProductController extends Controller
      */
     public function store(ProductRequest $request, Product $model)
     {
+        $explode_shopee_url = explode(".", $request->get('shopee_item_url'));
+        $len_url = count($explode_shopee_url);
         // shopee item id get from item url 
-        $request->request->add(['shopee_item_id' => explode(".", $request->get('shopee_item_url'))[3]?? null] );
-        $request->request->add(['shopee_shope_id' => explode(".", $request->get('shopee_item_url'))[2]?? null]);
-        $this->productService->createShopeeModels($request->request);
+        $request->request->add(['shopee_item_id' => $explode_shopee_url[$len_url-1]] );
+  
 
         $model->create($request->all());
 

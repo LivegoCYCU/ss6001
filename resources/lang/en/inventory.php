@@ -29,6 +29,7 @@ return [
     'faulty' => 'Faulty',
     'total_sold' => 'Total Sold',
     'new_product' => 'New Product',
+    'new_shopee_product' => 'New Shopee Product',
     'product' =>  'Product',
     'more' =>  'More Details',
     'edit' =>  'Edit Product',

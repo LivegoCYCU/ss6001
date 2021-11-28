@@ -130,7 +130,7 @@
                                 @foreach ($unfinishedsales as $sale)
                                     <tr>
                                         <td>{{ date('d-m-y', strtotime($sale->created_at)) }}</td>
-                                        <td><a href="">{{ $sale->client->name }}<br>{{ $sale->client->document_type }}-{{ $sale->client->document_id }}</a></td>
+                                        <td><a href="">{{ $sale->client->name ?? null }}<br>{{ $sale->client->document_type ?? null }}-{{ $sale->client->document_id ?? null}}</a></td>
                                         <td>{{ $sale->products->count() }}</td>
                                         <td>{{ format_money($sale->transactions->sum('amount')) }}</td>
                                         <td>{{ format_money($sale->products->sum('total_amount')) }}</td>

@@ -26,4 +26,7 @@ return [
     'not_specified' => '未標明',
     'continue' => '繼續' ,
     'detail' => '查看資訊',
+    'search' => '🔎 搜尋',
+    'choese' => '選擇',
+    'type' => '輸入',
 ];

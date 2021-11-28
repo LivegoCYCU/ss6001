@@ -60,6 +60,11 @@ Route::group(['middleware' => 'auth'], function () {
     Route::get('profile', ['as' => 'profile.edit', 'uses' => 'ProfileController@edit']);
     Route::match(['put', 'patch'], 'profile', ['as' => 'profile.update', 'uses' => 'ProfileController@update']);
     Route::match(['put', 'patch'], 'profile/password', ['as' => 'profile.password', 'uses' => 'ProfileController@password']);
+    
+    Route::post('products/store_shopee', ['as' => 'products.product.shopee.store', 'uses' => 'ProductController@store_shopee']);
+    Route::get('products/create_shopee', ['as' => 'products.create_shopee', 'uses' => 'ProductController@create_shopee']);
+
+
 });
 
 Route::group(['middleware' => 'auth'], function () {

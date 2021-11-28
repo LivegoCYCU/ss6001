@@ -40,5 +40,7 @@ return [
         'list_of_products' => 'LIST OF PRODUCTS',
         'category' => 'Category',
         'manage_sale' => 'Manage Sale',
+        'user_profile' => 'User Profile',
+        'user_management' => 'User Management',
     ]
 ];

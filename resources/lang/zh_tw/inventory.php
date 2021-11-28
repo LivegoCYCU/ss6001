@@ -29,6 +29,7 @@ return [
     'faulty' => '耗損',
     'total_sold' => '總銷售',
     'new_product' => '新增商品',
+    'new_shopee_product' => '新增蝦皮商品',
     'product' =>  '商品',
     'more' =>  '查看詳細資訊',
     'edit' =>  '編輯商品',

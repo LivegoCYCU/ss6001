@@ -45,7 +45,7 @@
 
                                 <div class="form-group{{ $errors->has('description') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-description">{{ trans('inventory.description') }}</label>
-                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="Description" value="{{ old('description', $product->description) }}" required>
+                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="Description" value="{{ old('description', $product->description) }}">
                                     @include('alerts.feedback', ['field' => 'description'])
 
                                 </div>
@@ -74,7 +74,7 @@
                                     <div class="col-3">                                    
                                         <div class="form-group{{ $errors->has('cost') ? ' has-danger' : '' }}">
                                             <label class="form-control-label" for="input-cost">{{ trans('inventory.cost') }}</label>
-                                            <input type="number" step=".00" name="cost" id="input-price" class="form-control form-control-alternative" placeholder="{{ trans('inventory.cost') }}" value="{{ old('cost', $product->cost) }}" required>
+                                            <input type="number" step=".01" name="cost" id="input-price" class="form-control form-control-alternative" placeholder="{{ trans('inventory.cost') }}" value="{{ old('cost', $product->cost) }}" required>
                                             @include('alerts.feedback', ['field' => 'cost'])
                                         </div>
                                     </div>

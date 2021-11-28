@@ -11,7 +11,7 @@ use Illuminate\Http\Request;
 class InventoryController extends Controller
 {
     public function stats()
-    {
+    {   
         return view('inventory.stats', [
             'categories' => ProductCategory::all(),
             'products' => Product::all(),

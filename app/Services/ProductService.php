@@ -33,7 +33,7 @@ class ProductService
                         'stock' => $model->stock,
                         'stock_defective' => 0,
                         'shopee_item_url' => $request->get('shopee_item_url'),
-                        'cost' => 0
+                        'cost' => $request->get('cost'),
                     ],
                     [
                         'shopee_model_id' => $model->modelid,

@@ -7,10 +7,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title"><?php echo e(__('Users')); ?></h4>
+                            <h4 class="card-title"><?php echo e(trans('user.users')); ?></h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="<?php echo e(route('users.create')); ?>" class="btn btn-sm btn-primary"><?php echo e(__('Add user')); ?></a>
+                            <a href="<?php echo e(route('users.create')); ?>" class="btn btn-sm btn-primary"><?php echo e(trans('button.add')); ?></a>
                         </div>
                     </div>
                 </div>
@@ -20,9 +20,9 @@
                     <div class="">
                         <table class="table tablesorter " id="">
                             <thead class=" text-primary">
-                                <th scope="col"><?php echo e(__('Name')); ?></th>
-                                <th scope="col"><?php echo e(__('Email')); ?></th>
-                                <th scope="col"><?php echo e(__('Creation Date')); ?></th>
+                                <th scope="col"><?php echo e(trans('user.name')); ?></th>
+                                <th scope="col"><?php echo e(trans('user.email')); ?></th>
+                                <th scope="col"><?php echo e(trans('user.creation_date')); ?></th>
                                 <th scope="col"></th>
                             </thead>
                             <tbody>
@@ -44,14 +44,14 @@
                                                                 <?php echo csrf_field(); ?>
                                                                 <?php echo method_field('delete'); ?>
 
-                                                                <a class="dropdown-item" href="<?php echo e(route('users.edit', $user)); ?>"><?php echo e(__('Edit')); ?></a>
+                                                                <a class="dropdown-item" href="<?php echo e(route('users.edit', $user)); ?>"><?php echo e(trans('button.edit')); ?></a>
                                                                 <button type="button" class="dropdown-item" onclick="confirm('<?php echo e(__('Are you sure you want to delete this user?')); ?>') ? this.parentElement.submit() : ''">
-                                                                            <?php echo e(__('Delete')); ?>
+                                                                            <?php echo e(trans('button.delete')); ?>
 
                                                                 </button>
                                                             </form>
                                                         <?php else: ?>
-                                                            <a class="dropdown-item" href="<?php echo e(route('profile.edit', $user->id)); ?>"><?php echo e(__('Edit')); ?></a>
+                                                            <a class="dropdown-item" href="<?php echo e(route('profile.edit', $user->id)); ?>"><?php echo e(trans('button.edit')); ?></a>
                                                         <?php endif; ?>
                                                     </div>
                                                 </div>
@@ -73,4 +73,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', ['page' => __('User Management'), 'pageSlug' => 'users', 'section' => 'users'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/users/index.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', ['page' => trans('sidebar.header.user_management'), 'pageSlug' => 'users', 'section' => 'users'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/users/index.blade.php ENDPATH**/ ?>

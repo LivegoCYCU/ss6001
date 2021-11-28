@@ -5,7 +5,7 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">Edit Profile</h5>
+                    <h5 class="title"><?php echo e(trans('user.edit_title')); ?></h5>
                 </div>
                 <form method="post" action="<?php echo e(route('profile.update')); ?>" autocomplete="off">
                     <div class="card-body">
@@ -15,26 +15,26 @@
                             <?php echo $__env->make('alerts.success', \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                             <div class="form-group<?php echo e($errors->has('name') ? ' has-danger' : ''); ?>">
-                                <label>Name</label>
+                                <label><?php echo e(trans('user.name')); ?></label>
                                 <input type="text" name="name" class="form-control<?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" placeholder="Name" value="<?php echo e(old('name', auth()->user()->name)); ?>">
                                 <?php echo $__env->make('alerts.feedback', ['field' => 'name'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
 
                             <div class="form-group<?php echo e($errors->has('email') ? ' has-danger' : ''); ?>">
-                                <label>Email</label>
+                                <label><?php echo e(trans('user.email')); ?></label>
                                 <input type="email" name="email" class="form-control<?php echo e($errors->has('email') ? ' is-invalid' : ''); ?>" placeholder="Email" value="<?php echo e(old('email', auth()->user()->email)); ?>">
                                 <?php echo $__env->make('alerts.feedback', ['field' => 'email'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                             </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-fill btn-primary">Save</button>
+                        <button type="submit" class="btn btn-fill btn-primary"><?php echo e(trans('button.save')); ?></button>
                     </div>
                 </form>
             </div>
 
             <div class="card">
                 <div class="card-header">
-                    <h5 class="title">Password</h5>
+                    <h5 class="title"><?php echo e(trans('user.password')); ?></h5>
                 </div>
                 <form method="post" action="<?php echo e(route('profile.password')); ?>" autocomplete="off">
                     <div class="card-body">
@@ -44,23 +44,23 @@
                         <?php echo $__env->make('alerts.success', ['key' => 'password_status'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
 
                         <div class="form-group<?php echo e($errors->has('old_password') ? ' has-danger' : ''); ?>">
-                            <label>Current password</label>
+                            <label><?php echo e(trans('user.current_password')); ?></label>
                             <input type="password" name="old_password" class="form-control<?php echo e($errors->has('old_password') ? ' is-invalid' : ''); ?>" placeholder="Current password" value="" required>
                             <?php echo $__env->make('alerts.feedback', ['field' => 'old_password'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
 
                         <div class="form-group<?php echo e($errors->has('password') ? ' has-danger' : ''); ?>">
-                            <label>New Password</label>
+                            <label><?php echo e(trans('user.new_password')); ?></label>
                             <input type="password" name="password" class="form-control<?php echo e($errors->has('password') ? ' is-invalid' : ''); ?>" placeholder="New password" value="" required>
                             <?php echo $__env->make('alerts.feedback', ['field' => 'password'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                         </div>
                         <div class="form-group">
-                            <label>Confirm new password</label>
+                            <label><?php echo e(trans('user.confirm_password')); ?></label>
                             <input type="password" name="password_confirmation" class="form-control" placeholder="Confirm new password" value="" required>
                         </div>
                     </div>
                     <div class="card-footer">
-                        <button type="submit" class="btn btn-fill btn-primary">Change Password</button>
+                        <button type="submit" class="btn btn-fill btn-primary"><?php echo e(trans('user.change_password')); ?></button>
                     </div>
                 </form>
             </div>
@@ -90,4 +90,4 @@
     </div>
 <?php $__env->stopSection(); ?>
 
-<?php echo $__env->make('layouts.app', ['page' => __('User Profile'), 'pageSlug' => 'profile', 'section' => 'users'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/profile/edit.blade.php ENDPATH**/ ?>
+<?php echo $__env->make('layouts.app', ['page' => trans('sidebar.header.user_profile'), 'pageSlug' => 'profile', 'section' => 'users'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?><?php /**PATH /home/vagrant/code/inventory/resources/views/profile/edit.blade.php ENDPATH**/ ?>

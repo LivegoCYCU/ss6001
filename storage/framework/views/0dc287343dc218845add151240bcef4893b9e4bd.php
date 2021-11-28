@@ -23,7 +23,7 @@
                             <div class="pl-lg-4">
                                 <div class="form-group<?php echo e($errors->has('name') ? ' has-danger' : ''); ?>">
                                     <label class="form-control-label" for="input-name"><?php echo e(trans('inventory.name')); ?></label>
-                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative<?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" placeholder="Name" value="<?php echo e(old('name')); ?>" required autofocus>
+                                    <input type="text" name="name" id="input-name" class="form-control form-control-alternative<?php echo e($errors->has('name') ? ' is-invalid' : ''); ?>" placeholder="<?php echo e(trans('inventory.name')); ?>" value="<?php echo e(old('name')); ?>" required autofocus>
                                     <?php echo $__env->make('alerts.feedback', ['field' => 'name'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
 
@@ -40,38 +40,49 @@
                                     </select>
                                     <?php echo $__env->make('alerts.feedback', ['field' => 'product_category_id'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
-
+                                <div class="form-group<?php echo e($errors->has('shopee_item_url') ? ' has-danger' : ''); ?>">
+                                    <label class="form-control-label" for="input-shopee_item_url"><?php echo e(trans('inventory.shopee_item_url')); ?></label>
+                                    <input type="text" name="shopee_item_url" id="input-shopee_item_url" class="form-control form-control-alternative" placeholder="<?php echo e(trans('inventory.shopee_item_url')); ?>" value="<?php echo e(old('shopee_item_url')); ?>" >
+                                    <?php echo $__env->make('alerts.feedback', ['field' => 'shopee_item_url'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                </div>
                                 <div class="form-group<?php echo e($errors->has('description') ? ' has-danger' : ''); ?>">
                                     <label class="form-control-label" for="input-description"><?php echo e(trans('inventory.description')); ?></label>
-                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="Description" value="<?php echo e(old('description')); ?>" required>
+                                    <input type="text" name="description" id="input-description" class="form-control form-control-alternative" placeholder="<?php echo e(trans('inventory.description')); ?>" value="<?php echo e(old('description')); ?>" >
                                     <?php echo $__env->make('alerts.feedback', ['field' => 'description'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                 </div>
                                 <div class="row">
-                                    <div class="col-4">                                    
+                                    <div class="col-3">                                    
                                         <div class="form-group<?php echo e($errors->has('stock') ? ' has-danger' : ''); ?>">
                                             <label class="form-control-label" for="input-stock"><?php echo e(trans('inventory.stock')); ?></label>
-                                            <input type="number" name="stock" id="input-stock" class="form-control form-control-alternative" placeholder="Stock" value="<?php echo e(old('stock')); ?>" required>
+                                            <input type="number" name="stock" id="input-stock" class="form-control form-control-alternative" placeholder="<?php echo e(trans('inventory.stock')); ?>" value="<?php echo e(old('stock')); ?>" required>
                                             <?php echo $__env->make('alerts.feedback', ['field' => 'stock'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
                                     </div>                            
-                                    <div class="col-4">                                    
+                                    <div class="col-3">                                    
                                         <div class="form-group<?php echo e($errors->has('stock_defective') ? ' has-danger' : ''); ?>">
                                             <label class="form-control-label" for="input-stock_defective"><?php echo e(trans('inventory.defective_stock')); ?></label>
-                                            <input type="number" name="stock_defective" id="input-stock_defective" class="form-control form-control-alternative" placeholder="Defective Stock" value="<?php echo e(old('stock_defective')); ?>" required>
+                                            <input type="number" name="stock_defective" id="input-stock_defective" class="form-control form-control-alternative" placeholder="<?php echo e(trans('inventory.defective_stock')); ?>" value="<?php echo e(old('stock_defective')); ?>" required>
                                             <?php echo $__env->make('alerts.feedback', ['field' => 'stock_defective'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
                                     </div>
-                                    <div class="col-4">                                    
+                                    <div class="col-3">                                    
                                         <div class="form-group<?php echo e($errors->has('price') ? ' has-danger' : ''); ?>">
                                             <label class="form-control-label" for="input-price"><?php echo e(trans('inventory.price')); ?></label>
-                                            <input type="number" step=".01" name="price" id="input-price" class="form-control form-control-alternative" placeholder="Price" value="<?php echo e(old('price')); ?>" required>
+                                            <input type="number" step=".01" name="price" id="input-price" class="form-control form-control-alternative" placeholder="<?php echo e(trans('inventory.price')); ?>" value="<?php echo e(old('price')); ?>" required>
                                             <?php echo $__env->make('alerts.feedback', ['field' => 'price'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
                                         </div>
-                                    </div>                            
+                                    </div>           
+                                    <div class="col-3">                                    
+                                        <div class="form-group<?php echo e($errors->has('cost') ? ' has-danger' : ''); ?>">
+                                            <label class="form-control-label" for="input-cost"><?php echo e(trans('inventory.cost')); ?></label>
+                                            <input type="number" step=".01" name="cost" id="input-cost" class="form-control form-control-alternative" placeholder="<?php echo e(trans('inventory.cost')); ?>" value="<?php echo e(old('cost')); ?>" required>
+                                            <?php echo $__env->make('alerts.feedback', ['field' => 'cost'], \Illuminate\Support\Arr::except(get_defined_vars(), ['__data', '__path']))->render(); ?>
+                                        </div>
+                                    </div>                    
                                 </div>
 
                                 <div class="text-center">
-                                    <button type="submit" class="btn btn-success mt-4">Save</button>
+                                    <button type="submit" class="btn btn-success mt-4"><?php echo e(trans('button.save')); ?></button>
                                 </div>
                             </div>
                         </form>

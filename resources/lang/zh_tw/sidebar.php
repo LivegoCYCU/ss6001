@@ -40,5 +40,7 @@ return [
         'list_of_products' => '商品清單',
         'category' => '商品種類',
         'manage_sale' => '銷售紀錄管理',
+        'user_profile' => '使用者檔案',
+        'user_management' => '使用者帳號管理',
     ]
 ];

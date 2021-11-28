@@ -130,7 +130,7 @@
                                 <?php $__currentLoopData = $unfinishedsales; $__env->addLoop($__currentLoopData); foreach($__currentLoopData as $sale): $__env->incrementLoopIndices(); $loop = $__env->getLastLoop(); ?>
                                     <tr>
                                         <td><?php echo e(date('d-m-y', strtotime($sale->created_at))); ?></td>
-                                        <td><a href=""><?php echo e($sale->client->name); ?><br><?php echo e($sale->client->document_type); ?>-<?php echo e($sale->client->document_id); ?></a></td>
+                                        <td><a href=""><?php echo e($sale->client->name ?? null); ?><br><?php echo e($sale->client->document_type ?? null); ?>-<?php echo e($sale->client->document_id ?? null); ?></a></td>
                                         <td><?php echo e($sale->products->count()); ?></td>
                                         <td><?php echo e(format_money($sale->transactions->sum('amount'))); ?></td>
                                         <td><?php echo e(format_money($sale->products->sum('total_amount'))); ?></td>

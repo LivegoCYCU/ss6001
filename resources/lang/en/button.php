@@ -26,5 +26,8 @@ return [
     'not_specified' => 'Not Specified',
     'continue' => 'Continue' ,
     'detail' => 'More Detail',
+    'search' => '🔎 Search',
+    'choese' => 'choese',
+    'type' => 'type',
 
 ];
