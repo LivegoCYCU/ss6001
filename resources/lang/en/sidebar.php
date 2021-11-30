@@ -42,5 +42,16 @@ return [
         'manage_sale' => 'Manage Sale',
         'user_profile' => 'User Profile',
         'user_management' => 'User Management',
-    ]
+        'methods' => 'Methods'
+    ],
+    'transactions' =>[
+        'transactions' => 'Transactions',
+        'statistics' => 'Statistics',
+        'sales' => 'Sales',
+        'expenses' => 'Expenses',
+        'income' => 'Income',
+        'transfers' => 'Transfers',
+        'payment' => 'Payment',
+    ],
+    'methods_accounts' => 'Methods and Accounts'
 ];

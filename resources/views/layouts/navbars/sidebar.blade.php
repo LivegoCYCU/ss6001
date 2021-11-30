@@ -7,63 +7,65 @@
                     <p>{{ trans('sidebar.dashboard') }}</p>
                 </a>
             </li>
-            {{-- <li>
-                <a data-toggle="collapse" href="#transactions" {{ $section == 'transactions' ? 'aria-expanded=true' : '' }}>
-                    <i class="tim-icons icon-bank" ></i>
-                    <span class="nav-link-text">Transactions</span>
+            <li>
+                <a data-toggle="collapse" href="#transactions"
+                    {{ $section == 'transactions' ? 'aria-expanded=true' : '' }}>
+                    <i class="tim-icons icon-bank"></i>
+                    <span class="nav-link-text">{{ trans('sidebar.transactions.transactions') }}</span>
                     <b class="caret mt-1"></b>
                 </a>
 
                 <div class="collapse {{ $section == 'transactions' ? 'show' : '' }}" id="transactions">
                     <ul class="nav pl-4">
                         <li @if ($pageSlug == 'tstats') class="active " @endif>
-                            <a href="{{ route('transactions.stats')  }}">
+                            <a href="{{ route('transactions.stats') }}">
                                 <i class="tim-icons icon-chart-pie-36"></i>
-                                <p>Statistics</p>
+                                <p>{{ trans('sidebar.transactions.transactions') }}</p>
                             </a>
                         </li>
-                        <li @if ($pageSlug == 'transactions') class="active " @endif>
-                            <a href="{{ route('transactions.index')  }}">
+                        {{-- <li @if ($pageSlug == 'transactions') class="active " @endif>
+                            <a href="{{ route('transactions.index') }}">
                                 <i class="tim-icons icon-bullet-list-67"></i>
                                 <p>All</p>
                             </a>
-                        </li>
+                        </li> --}}
                         <li @if ($pageSlug == 'sales') class="active " @endif>
-                            <a href="{{ route('sales.index')  }}">
+                            <a href="{{ route('sales.index') }}">
                                 <i class="tim-icons icon-bag-16"></i>
-                                <p>Sales</p>
+                                <p>{{ trans('sidebar.transactions.sales') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'expenses') class="active " @endif>
-                            <a href="{{ route('transactions.type', ['type' => 'expense'])  }}">
+                            <a href="{{ route('transactions.type', ['type' => 'expense']) }}">
                                 <i class="tim-icons icon-coins"></i>
-                                <p>Expenses</p>
+                                <p>{{ trans('sidebar.transactions.expenses') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'incomes') class="active " @endif>
-                            <a href="{{ route('transactions.type', ['type' => 'income'])  }}">
+                            <a href="{{ route('transactions.type', ['type' => 'income']) }}">
                                 <i class="tim-icons icon-credit-card"></i>
-                                <p>Income</p>
+                                <p>{{ trans('sidebar.transactions.income') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'transfers') class="active " @endif>
-                            <a href="{{ route('transfer.index')  }}">
+                            <a href="{{ route('transfer.index') }}">
                                 <i class="tim-icons icon-send"></i>
-                                <p>Transfers</p>
+                                <p>{{ trans('sidebar.transactions.transfers') }}</p>
                             </a>
                         </li>
                         <li @if ($pageSlug == 'payments') class="active " @endif>
-                            <a href="{{ route('transactions.type', ['type' => 'payment'])  }}">
+                            <a href="{{ route('transactions.type', ['type' => 'payment']) }}">
                                 <i class="tim-icons icon-money-coins"></i>
-                                <p>Payments</p>
+                                <p>{{ trans('sidebar.transactions.payment') }}</p>
                             </a>
                         </li>
                     </ul>
                 </div>
-            </li> --}}
+            </li>
 
             <li>
-                <a data-toggle="collapse" href="#inventory" {{ $section == 'inventory' ? 'aria-expanded=true' : '' }}>
+                <a data-toggle="collapse" href="#inventory"
+                    {{ $section == 'inventory' ? 'aria-expanded=true' : '' }}>
                     <i class="tim-icons icon-app"></i>
                     <span class="nav-link-text">{{ trans('sidebar.inventory.inventory') }}</span>
                     <b class="caret mt-1"></b>
@@ -113,12 +115,12 @@
                 </a>
             </li>
 
-            {{-- <li @if ($pageSlug == 'methods') class="active " @endif>
+            <li @if ($pageSlug == 'methods') class="active " @endif>
                 <a href="{{ route('methods.index') }}">
                     <i class="tim-icons icon-wallet-43"></i>
-                    <p>Methods and Accounts</p>
+                    <p>{{ trans('sidebar.methods_accounts') }}</p>
                 </a>
-            </li> --}}
+            </li>
 
 
             <!-- <li>

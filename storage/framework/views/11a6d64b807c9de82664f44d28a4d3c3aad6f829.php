@@ -7,10 +7,60 @@
                     <p><?php echo e(trans('sidebar.dashboard')); ?></p>
                 </a>
             </li>
-            
+            <li>
+                <a data-toggle="collapse" href="#transactions"
+                    <?php echo e($section == 'transactions' ? 'aria-expanded=true' : ''); ?>>
+                    <i class="tim-icons icon-bank"></i>
+                    <span class="nav-link-text"><?php echo e(trans('sidebar.transactions.transactions')); ?></span>
+                    <b class="caret mt-1"></b>
+                </a>
+
+                <div class="collapse <?php echo e($section == 'transactions' ? 'show' : ''); ?>" id="transactions">
+                    <ul class="nav pl-4">
+                        <li <?php if($pageSlug == 'tstats'): ?> class="active " <?php endif; ?>>
+                            <a href="<?php echo e(route('transactions.stats')); ?>">
+                                <i class="tim-icons icon-chart-pie-36"></i>
+                                <p><?php echo e(trans('sidebar.transactions.transactions')); ?></p>
+                            </a>
+                        </li>
+                        
+                        <li <?php if($pageSlug == 'sales'): ?> class="active " <?php endif; ?>>
+                            <a href="<?php echo e(route('sales.index')); ?>">
+                                <i class="tim-icons icon-bag-16"></i>
+                                <p><?php echo e(trans('sidebar.transactions.sales')); ?></p>
+                            </a>
+                        </li>
+                        <li <?php if($pageSlug == 'expenses'): ?> class="active " <?php endif; ?>>
+                            <a href="<?php echo e(route('transactions.type', ['type' => 'expense'])); ?>">
+                                <i class="tim-icons icon-coins"></i>
+                                <p><?php echo e(trans('sidebar.transactions.expenses')); ?></p>
+                            </a>
+                        </li>
+                        <li <?php if($pageSlug == 'incomes'): ?> class="active " <?php endif; ?>>
+                            <a href="<?php echo e(route('transactions.type', ['type' => 'income'])); ?>">
+                                <i class="tim-icons icon-credit-card"></i>
+                                <p><?php echo e(trans('sidebar.transactions.income')); ?></p>
+                            </a>
+                        </li>
+                        <li <?php if($pageSlug == 'transfers'): ?> class="active " <?php endif; ?>>
+                            <a href="<?php echo e(route('transfer.index')); ?>">
+                                <i class="tim-icons icon-send"></i>
+                                <p><?php echo e(trans('sidebar.transactions.transfers')); ?></p>
+                            </a>
+                        </li>
+                        <li <?php if($pageSlug == 'payments'): ?> class="active " <?php endif; ?>>
+                            <a href="<?php echo e(route('transactions.type', ['type' => 'payment'])); ?>">
+                                <i class="tim-icons icon-money-coins"></i>
+                                <p><?php echo e(trans('sidebar.transactions.payment')); ?></p>
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </li>
 
             <li>
-                <a data-toggle="collapse" href="#inventory" <?php echo e($section == 'inventory' ? 'aria-expanded=true' : ''); ?>>
+                <a data-toggle="collapse" href="#inventory"
+                    <?php echo e($section == 'inventory' ? 'aria-expanded=true' : ''); ?>>
                     <i class="tim-icons icon-app"></i>
                     <span class="nav-link-text"><?php echo e(trans('sidebar.inventory.inventory')); ?></span>
                     <b class="caret mt-1"></b>
@@ -60,7 +110,12 @@
                 </a>
             </li>
 
-            
+            <li <?php if($pageSlug == 'methods'): ?> class="active " <?php endif; ?>>
+                <a href="<?php echo e(route('methods.index')); ?>">
+                    <i class="tim-icons icon-wallet-43"></i>
+                    <p><?php echo e(trans('sidebar.methods_accounts')); ?></p>
+                </a>
+            </li>
 
 
             <!-- <li>

@@ -42,5 +42,18 @@ return [
         'manage_sale' => '銷售紀錄管理',
         'user_profile' => '使用者檔案',
         'user_management' => '使用者帳號管理',
-    ]
+        'methods' => '付款方式'
+
+    ],
+    'transactions' =>[
+        'transactions' => '交易',
+        'statistics' => '總覽',
+        'sales' => '交易',
+        'expenses' => '費用',
+        'income' => '收入',
+        'transfers' => '匯款',
+        'payment' => '付款',
+    ],
+    'methods_accounts' => '付款方式'
+
 ];
