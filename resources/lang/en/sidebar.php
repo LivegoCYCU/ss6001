@@ -42,7 +42,9 @@ return [
         'manage_sale' => 'Manage Sale',
         'user_profile' => 'User Profile',
         'user_management' => 'User Management',
-        'methods' => 'Methods'
+        'methods' => 'Methods',
+        'method_management' => 'Method management',
+
     ],
     'transactions' =>[
         'transactions' => 'Transactions',
