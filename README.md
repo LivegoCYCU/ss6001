@@ -6,14 +6,14 @@
 <img src="https://imgur.com/LfwucBc.jpg" width="100%" height="50%" />
 </center>
 
+<figure class="third">
+<img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red"> <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue"> <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive"> <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess"> </figure>
+
+
+
+
+
 <center>
-<img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red"> <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue"> <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive"> <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
-
-
-
-
-
-
 <h2 style="margin-top:1.3rem">中文．English</h4>
 
 </center>
