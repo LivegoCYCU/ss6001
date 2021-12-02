@@ -19,13 +19,14 @@ class ProductRepository
     {
         return $query = Product::orderBy('price')
             ->where(function ($query) use ($condition) {
-                if ($condition->get('category') != "null") {
+                if ($condition->get('category') != null) {
                     $query->where('product_category_id', $condition->get('category'));
                 }
 
                 if ($condition->get('name') != null ) {
                     $query->where('name', 'like', '%' . $condition->get('name') . '%');
                 }
+                
             })
             ->paginate(25);
     }

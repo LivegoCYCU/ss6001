@@ -47,7 +47,9 @@
                                 <th scope="col">{{ trans('inventory.category') }}</th>
                                 <th scope="col">{{ trans('inventory.product') }}</th>
                                 <th scope="col">{{ trans('inventory.price') }}</th>
-                                <th scope="col">{{ trans('inventory.cost') }}</th>
+                                @if(Auth::user()->is_super_admin)
+                                    <th scope="col">{{ trans('inventory.cost') }}</th>     
+                                @endif
                                 <th scope="col">{{ trans('inventory.stock') }}</th>
                                 <th scope="col">{{ trans('inventory.faulty') }}</th>
                                 <th scope="col">{{ trans('inventory.total_sold') }}</th>
@@ -61,7 +63,9 @@
                                         </td>
                                         <td>{{ $product->name }}</td>
                                         <td>{{ format_money($product->price) }}</td>
-                                        <td>{{ format_money($product->cost) }}</td>
+                                        @if(Auth::user()->is_super_admin)
+                                            <td>{{ format_money($product->cost) }}</td>
+                                        @endif
                                         <td>{{ $product->stock }}</td>
                                         <td>{{ $product->stock_defective }}</td>
                                         <td>{{ $product->solds->sum('qty') }}</td>

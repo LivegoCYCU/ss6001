@@ -15,7 +15,7 @@
                             <th>{{ trans('inventory.name') }}</th>
                             <th>{{ trans('inventory.stock') }}</th>
                             <th>{{ trans('inventory.defective_stock') }}</th>
-                            <th>{{ trans('inventory.base_price') }}</th>
+                            <th>{{ trans('inventory.price') }}</th>
                             <th>{{ trans('inventory.average_price') }}</th>
                             <th>{{ trans('inventory.total_sales') }}</th>
                             <th>{{ trans('inventory.income_produced') }}</th>

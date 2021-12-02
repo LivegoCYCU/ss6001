@@ -71,6 +71,7 @@
                                             @include('alerts.feedback', ['field' => 'price'])
                                         </div>
                                     </div>
+                                    @if(Auth::user()->is_super_admin)
                                     <div class="col-3">                                    
                                         <div class="form-group{{ $errors->has('cost') ? ' has-danger' : '' }}">
                                             <label class="form-control-label" for="input-cost">{{ trans('inventory.cost') }}</label>
@@ -78,6 +79,7 @@
                                             @include('alerts.feedback', ['field' => 'cost'])
                                         </div>
                                     </div>
+                                    @endif
                                 </div>
 
                                 <div class="text-center">
