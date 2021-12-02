@@ -7,18 +7,7 @@
 </center>
 
 <center>
-<div style="float:none;clear:both;display:inline">
-    <img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red">
-</div>
-<div style="float:none;clear:both;display:inline">
-    <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue">
-</div>
-<div style="float:none;clear:both;display:inline">
-    <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive">
-</div>
-<div style="float:none;clear:both;display:inline">
-    <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
-</div>
+<img src="https://img.shields.io/static/v1?label=build&message=Laravel&color=red"> <img src="https://img.shields.io/static/v1?label=php&message=8&color=blue"> <img src="https://img.shields.io/static/v1?label=download&message=150MB&color=inactive"> <img src="https://img.shields.io/static/v1?label=license&message=MIT&color=sccess">
 
 
 
