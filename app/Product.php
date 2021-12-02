@@ -4,6 +4,8 @@ namespace App;
 
 use Illuminate\Database\Eloquent\Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
+use Illuminate\Support\Facades\Auth;
+
 
 class Product extends Model
 {
@@ -12,6 +14,7 @@ class Product extends Model
     protected $fillable = [
         'name', 'description', 'product_category_id', 'price', 'stock', 'stock_defective', 'shopee_item_id' ,'shopee_item_url', 'cost', 'shopee_model_id'
     ];
+
 
     public function category()
     {

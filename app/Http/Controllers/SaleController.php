@@ -10,6 +10,7 @@ use App\SoldProduct;
 use App\Transaction;
 use App\PaymentMethod;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 
 class SaleController extends Controller
 {
