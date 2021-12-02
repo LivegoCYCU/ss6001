@@ -32,5 +32,6 @@ return [
     'delete_msg' => 'Are you sure you want to delete this product/order? Your registration will be deleted from this sale.',
     'submit_msg' => 'ATTENTION: The transactions of this sale do not seem to coincide with the cost of the products, do you want to finalize it? Your records cannot be modified from now on.',
     'completed_at' => 'Completed at',
-
+    'total_amount' => 'Total Amount',
+ 
 ];

@@ -1,4 +1,4 @@
-@extends('layouts.app', ['page' => 'Income', 'pageSlug' => 'incomes', 'section' => 'transactions'])
+@extends('layouts.app', ['page' => trans("income.income"), 'pageSlug' => 'incomes', 'section' => 'transactions'])
 
 @section('content')
     <div class="row">
@@ -7,10 +7,10 @@
                 <div class="card-header">
                     <div class="row">
                         <div class="col-8">
-                            <h4 class="card-title">Income</h4>
+                            <h4 class="card-title">{{ trans("income.income") }}</h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('transactions.create', ['type' => 'income']) }}" class="btn btn-sm btn-primary">Register Income</a>
+                            <a href="{{ route('transactions.create', ['type' => 'income']) }}" class="btn btn-sm btn-primary">{{ trans("button.add") }}</a>
                         </div>
                     </div>
                 </div>
@@ -20,11 +20,11 @@
                     <div class="">
                         <table class="table tablesorter " id="">
                             <thead class=" text-primary">
-                                <th scope="col">Date</th>
-                                <th scope="col">Title</th>
-                                <th scope="col">Method</th>
-                                <th scope="col">Amount</th>
-                                <th scope="col">Reference</th>
+                                <th scope="col">{{ trans("income.date") }}</th>
+                                <th scope="col">{{ trans("income.title") }}</th>
+                                <th scope="col">{{ trans("income.method") }}</th>
+                                <th scope="col">{{ trans("income.payment_method") }}</th>
+                                <th scope="col">{{ trans("income.reference") }}</th>
                                 <th scope="col"></th>
                             </thead>
                             <tbody>
@@ -38,17 +38,17 @@
                                         <td></td>
                                         <td class="td-actions text-right">
                                             @if ($transaction->sale_id)
-                                                <a href="{{ route('sales.show', $transaction->sale_id) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="More Details">
+                                                <a href="{{ route('sales.show', $transaction->sale_id) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{ trans("button.detail") }}">
                                                     <i class="tim-icons icon-zoom-split"></i>
                                                 </a>
                                             @else
-                                                <a href="{{ route('transactions.edit', $transaction) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Edit Income">
+                                                <a href="{{ route('transactions.edit', $transaction) }}" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{ trans("button.edit") }}">
                                                     <i class="tim-icons icon-pencil"></i>
                                                 </a>
                                                 <form action="{{ route('transactions.destroy', $transaction) }}" method="post" class="d-inline">
                                                     @csrf
                                                     @method('delete')
-                                                    <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="Delete Income" onclick="confirm('Are you sure you want to delete this entry? There will be no record left.') ? this.parentElement.submit() : ''">
+                                                    <button type="button" class="btn btn-link" data-toggle="tooltip" data-placement="bottom" title="{{ trans("button.delete") }}" onclick="confirm('Are you sure you want to delete this entry? There will be no record left.') ? this.parentElement.submit() : ''">
                                                         <i class="tim-icons icon-simple-remove"></i>
                                                     </button>
                                                 </form>

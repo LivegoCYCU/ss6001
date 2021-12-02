@@ -13,22 +13,13 @@ return [
     |
     */
 
-    'create' => '創建',
-    'edit' => '編輯',
-    'update' => '更新',
-    'save' => '儲存',
-    'submit' => '送出',
-    'OK' => '確認',
-    'cancel' => '取消',
-    'back' => '回到列表頁',
-    'add' => '新增',
-    'delete' => '刪除',
-    'not_specified' => '未標明',
-    'continue' => '繼續' ,
-    'detail' => '查看資訊',
-    'search' => '🔎 搜尋',
-    'choese' => '選擇',
-    'type' => '輸入',
-    'show' => '顯示',
+    'date' => '日期',
+    'title' => '抬頭',
+    'sender_method' => '付款人付款方式',
+    'receiver_method' => '收款人收款方式',
+    'reference' => '備住',
+    'amount_sent' => '發送金額',
+    'amount_received' => '收到的金額',
+    'information' => '匯款資訊',
 
 ];

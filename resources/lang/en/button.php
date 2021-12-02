@@ -29,5 +29,5 @@ return [
     'search' => '🔎 Search',
     'choese' => 'choese',
     'type' => 'type',
-
+    'show' => 'Show',
 ];

@@ -13,22 +13,12 @@ return [
     |
     */
 
-    'create' => '創建',
-    'edit' => '編輯',
-    'update' => '更新',
-    'save' => '儲存',
-    'submit' => '送出',
-    'OK' => '確認',
-    'cancel' => '取消',
-    'back' => '回到列表頁',
-    'add' => '新增',
-    'delete' => '刪除',
-    'not_specified' => '未標明',
-    'continue' => '繼續' ,
-    'detail' => '查看資訊',
-    'search' => '🔎 搜尋',
-    'choese' => '選擇',
-    'type' => '輸入',
-    'show' => '顯示',
+    'information' => '收入資訊',
+    'title' => '抬頭',
+    'payment_method' => '付款方式',
+    'amount' => '金額',
+    'reference' => '備註',
+    'income' => '收入',
+    'date' => '日期',
 
 ];

@@ -44,7 +44,12 @@ return [
         'user_management' => 'User Management',
         'methods' => 'Methods',
         'method_management' => 'Method management',
-
+        'edit_title' => 'Edit Income',
+        'new_expense' => 'New Expense',
+        'edit_expense' => 'Edit Expense',
+        'register_transfer' => 'Register Transfer',
+        'new_payment' => 'New Payment',
+        'edit_payment' => 'Edit Payment',
     ],
     'transactions' =>[
         'transactions' => 'Transactions',
@@ -55,5 +60,9 @@ return [
         'transfers' => 'Transfers',
         'payment' => 'Payment',
     ],
-    'methods_accounts' => 'Methods and Accounts'
+    'methods_accounts' => 'Methods and Accounts',
+    'sales' => 'Sales',
+    'expense' => 'Expense',
+    'transfers' => 'Transfers',
+
 ];

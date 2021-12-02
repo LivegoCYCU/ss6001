@@ -44,6 +44,12 @@ return [
         'user_management' => '使用者帳號管理',
         'methods' => '付款方式',
         'method_management' => '管理付款方式',
+        'edit_title' => '編輯收入訊息',
+        'new_expense' => '新增費用資訊',
+        'edit_expense' => '修改費用資訊',
+        'register_transfer' => '新增匯款資訊',
+        'new_payment' => '新增付款資訊',
+        'edit_payment' => '修改付款資訊',
 
     ],
     'transactions' =>[
@@ -55,6 +61,9 @@ return [
         'transfers' => '匯款',
         'payment' => '付款',
     ],
-    'methods_accounts' => '付款方式'
+    'methods_accounts' => '付款方式',
+    'sales' => '銷售紀錄',
+    'expense' => '費用',
+    'transfers' => '匯款',
 
 ];
