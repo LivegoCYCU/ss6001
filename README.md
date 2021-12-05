@@ -17,8 +17,6 @@
     <h2 style="margin-top:1.3rem">中文．English</h4>
 </center>
 
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Naereen/badges)
-[![Open in Visual Studio Code](https://open.vscode.dev/badges/open-in-vscode.svg)](https://open.vscode.dev/Naereen/badges)
 
 
 ## About

@@ -12,7 +12,7 @@ class Product extends Model
     use SoftDeletes;
 
     protected $fillable = [
-        'name', 'description', 'product_category_id', 'price', 'stock', 'stock_defective', 'shopee_item_id' ,'shopee_item_url', 'cost', 'shopee_model_id'
+        'name', 'description', 'product_category_id', 'price', 'stock', 'stock_defective', 'shopee_item_id' ,'shopee_item_url', 'cost', 'shopee_model_id', 'check_stock'
     ];
 
 

@@ -17,4 +17,6 @@ return [
     'throttle' => '嘗試登入太多次，請 :seconds 秒後再嘗試',
     'finalize' => '完成',
     'to_finalize' => '未完成',
+    'yes' => '是',
+    'no' => '否',
 ];

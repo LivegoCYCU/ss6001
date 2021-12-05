@@ -17,4 +17,6 @@ return [
     'throttle' => 'Too many login attempts. Please try again in :seconds seconds.',
     'finalize' => 'Finalize',
     'to_finalize' => 'To Finalize',
+    'yes' => 'Yes',
+    'no' => 'No',
 ];

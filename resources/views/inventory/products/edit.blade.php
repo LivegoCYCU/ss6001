@@ -82,6 +82,16 @@
                                     @endif
                                 </div>
 
+                                @if($product->check_stock == false)
+                                    <div class="form-group{{ $errors->has('check_stock') ? ' has-danger' : '' }}">
+                                        <label class="form-control-label" for="input-check_stock">{{ trans('inventory.check_stock') }}</label>
+                                        <select name="check_stock" id="input-check_stock" class="form-select text-dark custom-select form-control-alternative{{ $errors->has('check_stock') ? ' is-invalid' : '' }}" required>
+                                                <option value="1">{{ trans('auth.yes') }}</option>                             
+                                                <option value="0" selected>{{ trans('auth.no') }}</option>
+                                        </select>
+                                        @include('alerts.feedback', ['field' => 'check_stock'])
+                                    </div>
+                                @endif
                                 <div class="text-center">
                                     <button type="submit" class="btn btn-success mt-4">{{ trans('button.save') }}</button>
                                 </div>

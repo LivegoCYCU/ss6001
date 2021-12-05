@@ -52,5 +52,8 @@ return [
     'inventory_title' => '收據抬頭',
     'ver_receipt' => '查看該筆收據',
     'shopee_item_url' => '蝦皮商品連結',
-    'cost' => '成本'
+    'cost' => '成本',
+    'check_stock' => '是否確認庫存數量?',
+    'stock_ok' => '確認庫存',
+
 ];

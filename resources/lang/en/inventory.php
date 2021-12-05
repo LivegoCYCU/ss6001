@@ -51,5 +51,7 @@ return [
     'inventory_title' => 'title',
     'ver_receipt' => 'Ver Receipt',
     'shopee_item_url' => 'Shopee item url',
-    'cost' => 'Cost'
+    'cost' => 'Cost',
+    'check_stock' => 'Check stock?',
+    'stock_ok' => 'Check stock already',
 ];

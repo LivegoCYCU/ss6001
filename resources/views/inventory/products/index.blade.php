@@ -54,6 +54,7 @@
                                 <th scope="col">{{ trans('inventory.faulty') }}</th>
                                 <th scope="col">{{ trans('inventory.total_sold') }}</th>
                                 <th scope="col"></th>
+                                <th scope="col"></th>
                             </thead>
                             <tbody>
                                 @foreach ($products as $product)
@@ -69,6 +70,11 @@
                                         <td>{{ $product->stock }}</td>
                                         <td>{{ $product->stock_defective }}</td>
                                         <td>{{ $product->solds->sum('qty') }}</td>
+                                        <td> 
+                                            @if($product->check_stock == true)
+                                                <span class="badge badge-primary">{{trans('inventory.stock_ok')}}</span>
+                                            @endif
+                                        </td>
                                         <td class="td-actions text-right">
                                             <a href="{{ route('products.show', $product) }}" class="btn btn-link"
                                                 data-toggle="tooltip" data-placement="bottom"
