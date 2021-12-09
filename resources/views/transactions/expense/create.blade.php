@@ -43,6 +43,18 @@
                                     @include('alerts.feedback', ['field' => 'payment_method_id'])
                                 </div>
 
+                                
+                                <div class="form-group">
+                                    <label class="form-control-label" for="input-receipt_id">{{ trans('transaction.receipt_title') }}</label>
+                                    <select name="receipt_id" id="input-receipt_id" class="form-select text-dark custom-select" required>
+                                        <option value selected>{{ trans('auth.null') }}</option>
+                                        @foreach ($receipts as $receipt)
+                                            <option value="{{$receipt->id}}">{{$receipt->title}}</option>   
+                                        @endforeach
+                                    </select>
+                                    @include('alerts.feedback', ['field' => 'payment_method_id'])
+                                </div>
+
                                 <div class="form-group{{ $errors->has('amount') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-amount">{{ trans('expense.amount') }}</label>
                                     <input type="number" step=".01" name="amount" id="input-amount" class="form-control form-control-alternative" placeholder="Amount" value="{{ old('amount') }}" min="0" required>

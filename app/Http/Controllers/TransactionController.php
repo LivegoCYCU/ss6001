@@ -8,6 +8,7 @@ use App\Provider;
 use Carbon\Carbon;
 use App\SoldProduct;
 use App\Transaction;
+use App\Receipt;
 use App\PaymentMethod;
 use Illuminate\Http\Request;
 
@@ -92,6 +93,7 @@ class TransactionController extends Controller
             case 'expense':
                 return view('transactions.expense.create', [
                     'payment_methods' => PaymentMethod::all(),
+                    'receipts' => Receipt::all()
                 ]);
 
             case 'payment':
@@ -183,13 +185,14 @@ class TransactionController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Transaction $transaction)
-    {
+    public function edit(Transaction $transaction, Receipt $receipts)
+    {   
         switch ($transaction->type) {
             case 'expense':
                 return view('transactions.expense.edit', [
                     'transaction' => $transaction,
-                    'payment_methods' => PaymentMethod::all()
+                    'payment_methods' => PaymentMethod::all(),
+                    'receipts' => Receipt::all(),
                 ]);
 
             case 'payment':

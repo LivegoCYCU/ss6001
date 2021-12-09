@@ -11,7 +11,7 @@ use App\Repositories\ProductRepository;
 
 class ProductController extends Controller
 {
-    public function __construct(ProductService $productService ,ProductRepository $productRepository)
+    public function __construct(ProductService $productService, ProductRepository $productRepository)
     {
         $this->productService = $productService;
         $this->productRepository = $productRepository;
@@ -26,7 +26,7 @@ class ProductController extends Controller
         $products =  $this->productRepository->getProductByConditions($request);
         $categories = ProductCategory::get();
 
-        return view('inventory.products.index', compact('products') , [ 'categories' => $categories , 'request' => $request]);        
+        return view('inventory.products.index', compact('products'), ['categories' => $categories, 'request' => $request]);
     }
 
     /**
@@ -60,12 +60,12 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function store_shopee(Request $request)
-    {   
+    {
         // shopee item id get from item url 
         $explode_shopee_url = explode(".", $request->get('shopee_item_url'));
         $len_url = count($explode_shopee_url);
-        $request->request->add(['shopee_item_id' => $explode_shopee_url[$len_url-1]] );
-        $request->request->add(['shopee_shope_id' => $explode_shopee_url[$len_url-2]]);
+        $request->request->add(['shopee_item_id' => $explode_shopee_url[$len_url - 1]]);
+        $request->request->add(['shopee_shope_id' => $explode_shopee_url[$len_url - 2]]);
 
         $this->productService->createShopeeModels($request->request);
 
@@ -86,8 +86,8 @@ class ProductController extends Controller
         $explode_shopee_url = explode(".", $request->get('shopee_item_url'));
         $len_url = count($explode_shopee_url);
         // shopee item id get from item url 
-        $request->request->add(['shopee_item_id' => $explode_shopee_url[$len_url-1]] );
-  
+        $request->request->add(['shopee_item_id' => $explode_shopee_url[$len_url - 1]]);
+
 
         $model->create($request->all());
 
@@ -117,11 +117,11 @@ class ProductController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Product $product)
+    public function edit(Product $product, Request $request)
     {
         $categories = ProductCategory::all();
 
-        return view('inventory.products.edit', compact('product', 'categories'));
+        return view('inventory.products.edit', compact('product', 'categories', 'request'));
     }
 
     /**
@@ -136,7 +136,7 @@ class ProductController extends Controller
         $product->update($request->all());
 
         return redirect()
-            ->route('products.index')
+            ->route('products.index', [$request])
             ->withStatus(trans('message.updated',  ['title' => trans('inventory.product')]));
     }
 
@@ -146,12 +146,12 @@ class ProductController extends Controller
      * @param  Product  $product
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Product $product)
+    public function destroy(Product $product, Request $request)
     {
         $product->delete();
 
         return redirect()
-            ->route('products.index')
+            ->route('products.index', [$request])
             ->withStatus(trans('message.removed',  ['title' => trans('inventory.product')]));
     }
 }

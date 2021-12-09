@@ -9,7 +9,7 @@ use Carbon\Carbon;
 class Transaction extends Model
 {
     protected $fillable = [
-        'title', 'reference', 'amount', 'payment_method_id', 'type', 'client_id', 'user_id', 'sale_id', 'provider_id', 'transfer_id'
+        'title', 'reference', 'amount', 'payment_method_id', 'type', 'client_id', 'user_id', 'sale_id', 'provider_id', 'transfer_id', 'receipt_id'
     ];
 
     public function method()

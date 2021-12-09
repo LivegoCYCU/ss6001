@@ -19,12 +19,12 @@
                     </div>
 
                     <form method="get" action="{{ route('products.store') }}" class="form-inline row" autocomplete="off">
-                        <select class="custom-select text-dark m-2" name="category">
-                            <option selected value="null" class="d-none">
+                        <select class="custom-select text-dark m-2" name="product_category_id">
+                            <option selected value=>
                                 {{ trans('button.choese') . trans('inventory.product') . trans('inventory.category') }}
                             </option>
                             @foreach ($categories as $category)
-                                @if ($request->get('category')  == $category->id)
+                                @if ($request->get('product_category_id')  == $category->id)
                                     <option selected value="{{ $category->id }}">{{ $category->name }}</option>
                                 @else
                                     <option value="{{ $category->id }}">{{ $category->name }}</option>
@@ -53,6 +53,8 @@
                                 <th scope="col">{{ trans('inventory.stock') }}</th>
                                 <th scope="col">{{ trans('inventory.faulty') }}</th>
                                 <th scope="col">{{ trans('inventory.total_sold') }}</th>
+                                <th scope="col">item_id</th>
+                                <th scope="col">model_id</th>
                                 <th scope="col"></th>
                                 <th scope="col"></th>
                             </thead>
@@ -70,6 +72,8 @@
                                         <td>{{ $product->stock }}</td>
                                         <td>{{ $product->stock_defective }}</td>
                                         <td>{{ $product->solds->sum('qty') }}</td>
+                                        <td>{{ $product->shopee_item_id }}</td>
+                                        <td>{{ $product->shopee_model_id }}</td>
                                         <td> 
                                             @if($product->check_stock == true)
                                                 <span class="badge badge-primary">{{trans('inventory.stock_ok')}}</span>

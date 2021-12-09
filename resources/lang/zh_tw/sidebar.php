@@ -50,6 +50,7 @@ return [
         'register_transfer' => '新增匯款資訊',
         'new_payment' => '新增付款資訊',
         'edit_payment' => '修改付款資訊',
+        'new_method' => '新增付款方式',
 
     ],
     'transactions' =>[

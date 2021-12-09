@@ -19,4 +19,7 @@ return [
     'to_finalize' => '未完成',
     'yes' => '是',
     'no' => '否',
+    'null' => '無',
+    'choose_file' => '選擇蝦皮訂單檔案'
+
 ];

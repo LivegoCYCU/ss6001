@@ -32,4 +32,5 @@ return [
     'amount' => 'Amount',
     'reference' => 'Reference',
     'delete_transaction_meg' => 'Are you sure you want to delete this transaction? There will be no record left.',
+    
 ];

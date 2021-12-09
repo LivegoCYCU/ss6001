@@ -19,4 +19,6 @@ return [
     'to_finalize' => 'To Finalize',
     'yes' => 'Yes',
     'no' => 'No',
+    'null' => 'Null',
+    'choose_file' => 'Choose Shopee order file'
 ];

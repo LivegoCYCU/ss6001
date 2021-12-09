@@ -50,6 +50,7 @@ return [
         'register_transfer' => 'Register Transfer',
         'new_payment' => 'New Payment',
         'edit_payment' => 'Edit Payment',
+        'new_method' => 'New Method',
     ],
     'transactions' =>[
         'transactions' => 'Transactions',

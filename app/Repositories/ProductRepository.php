@@ -16,11 +16,12 @@ class ProductRepository
 
 
     public function getProductByConditions($condition)
-    {
+    {   
+  
         return $query = Product::orderBy('price')
             ->where(function ($query) use ($condition) {
-                if ($condition->get('category') != null) {
-                    $query->where('product_category_id', $condition->get('category'));
+                if ($condition->get('product_category_id') != null) {
+                    $query->where('product_category_id', $condition->get('product_category_id'));
                 }
 
                 if ($condition->get('name') != null ) {

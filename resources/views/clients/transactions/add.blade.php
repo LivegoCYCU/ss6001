@@ -26,7 +26,7 @@
                                 <div class="form-group{{ $errors->has('type') ? ' has-danger' : '' }}">
                                     <label class="form-control-label" for="input-method">{{ trans('transaction.type') }}</label>
                                     <select name="type" id="input-method" class="form-control form-control-alternative{{ $errors->has('type') ? ' is-invalid' : '' }}" required>
-                                        @foreach (['income' => 'Payment Received', 'expense' => 'Returned Paid'] as $type => $title)
+                                        @foreach (['income' => trans('transaction.payment_received'), 'expense' => trans('transaction.returned_paid')] as $type => $title)
                                             @if($type == old('type'))
                                                 <option value="{{$type}}" selected>{{ $title }}</option>
                                             @else

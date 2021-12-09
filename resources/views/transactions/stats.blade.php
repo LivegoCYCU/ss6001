@@ -119,7 +119,8 @@
                             <h4 class="card-title">{{ trans('transaction.statistics_methods') }}</h4>
                         </div>
                         <div class="col-4 text-right">
-                            <a href="{{ route('methods.index') }}" class="btn btn-sm btn-primary">{{ trans('transaction.view_methods') }}</a>
+                            <a href="{{ route('methods.index') }}"
+                                class="btn btn-sm btn-primary">{{ trans('transaction.view_methods') }}</a>
                         </div>
                     </div>
                 </div>
@@ -137,7 +138,7 @@
                                     <tr>
                                         <td><a href="{{ route('methods.show', $method) }}">{{ $method->name }}</a>
                                         </td>
-                                        <td>{{ format_money($transactionsperiods['Year']->where('payment_method_id', $method->id)->count()) }}
+                                        <td>{{ $transactionsperiods['Year']->where('payment_method_id', $method->id)->count() }}
                                         </td>
                                         <td>{{ format_money($transactionsperiods['Year']->where('payment_method_id', $method->id)->sum('amount')) }}
                                         </td>
@@ -191,15 +192,15 @@
                                     <td>{{ $data->count() }}</td>
                                     <td>{{ $data->groupBy('client_id')->count() }}</td>
                                     <td>{{ $data->where('finalized_at', '!=', null)->map(function ($sale) {
-        return $sale->products->sum('qty');
-    })->sum() }}
+                                            return $sale->products->sum('qty');
+                                        })->sum() }}
                                     </td>
                                     <td>{{ format_money($data->avg('total_amount')) }}</td>
                                     <td>{{ format_money(
-    $data->where('finalized_at', '!=', null)->map(function ($sale) {
-            return $sale->products->sum('total_amount');
-        })->sum(),
-) }}
+                                        $data->where('finalized_at', '!=', null)->map(function ($sale) {
+                                                return $sale->products->sum('total_amount');
+                                            })->sum(),
+                                    ) }}
                                     </td>
                                     <td>{{ $data->where('finalized_at', null)->count() }}</td>
                                 </tr>

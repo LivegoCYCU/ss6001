@@ -563,7 +563,7 @@ trait ValidatesAttributes
             [1, 1], array_filter(sscanf($parameters['ratio'], '%f/%d'))
         );
 
-        $precision = 1 / max($width, $height);
+        $precision = 1 / (max($width, $height) + 1);
 
         return abs($numerator / $denominator - $width / $height) > $precision;
     }
@@ -656,6 +656,8 @@ trait ValidatesAttributes
                     return new FilterEmailValidation();
                 } elseif ($validation === 'filter_unicode') {
                     return FilterEmailValidation::unicode();
+                } elseif (is_string($validation) && class_exists($validation)) {
+                    return $this->container->make($validation);
                 }
             })
             ->values()
@@ -1062,7 +1064,7 @@ trait ValidatesAttributes
      */
     public function validateImage($attribute, $value)
     {
-        return $this->validateMimes($attribute, $value, ['jpeg', 'png', 'gif', 'bmp', 'svg', 'webp']);
+        return $this->validateMimes($attribute, $value, ['jpg', 'jpeg', 'png', 'gif', 'bmp', 'svg', 'webp']);
     }
 
     /**
@@ -1168,7 +1170,11 @@ trait ValidatesAttributes
      */
     public function validateJson($attribute, $value)
     {
-        if (! is_scalar($value) && ! method_exists($value, '__toString')) {
+        if (is_array($value)) {
+            return false;
+        }
+
+        if (! is_scalar($value) && ! is_null($value) && ! method_exists($value, '__toString')) {
             return false;
         }
 
@@ -1214,6 +1220,10 @@ trait ValidatesAttributes
             return false;
         }
 
+        if (in_array('jpg', $parameters) || in_array('jpeg', $parameters)) {
+            $parameters = array_unique(array_merge($parameters, ['jpg', 'jpeg']));
+        }
+
         return $value->getPath() !== '' && in_array($value->guessExtension(), $parameters);
     }
 
@@ -1254,7 +1264,7 @@ trait ValidatesAttributes
         }
 
         $phpExtensions = [
-            'php', 'php3', 'php4', 'php5', 'phtml',
+            'php', 'php3', 'php4', 'php5', 'phtml', 'phar',
         ];
 
         return ($value instanceof UploadedFile)
@@ -1908,7 +1918,6 @@ trait ValidatesAttributes
      *
      * @param  string  $attribute
      * @param  string  $rule
-     *
      * @return void
      */
     protected function shouldBeNumeric($attribute, $rule)

@@ -44,4 +44,8 @@ return [
     'register_transation' => '新增交易',
     'statistics_methods' => '按方法統計',
     'view_methods' => '查看付款方式',
+    'payment_received' => '付款',
+    'returned_paid' => '退款',
+    'receipt_title' => '收據名稱'
+
 ];

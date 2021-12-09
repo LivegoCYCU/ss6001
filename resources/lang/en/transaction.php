@@ -44,6 +44,7 @@ return [
     'register_transation' => 'Register Transation',
     'statistics_methods' => 'Statistics by Methods',
     'view_methods' => 'View Methods',
-
-    
+    'payment_received' => 'Payment Received',
+    'returned_paid' => 'Returned Paid',
+    'receipt_title' => 'Receipt Title'
 ];
