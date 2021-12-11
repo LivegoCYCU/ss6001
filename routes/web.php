@@ -63,6 +63,9 @@ Route::group(['middleware' => 'auth'], function () {
     
     Route::post('products/store_shopee', ['as' => 'products.product.shopee.store', 'uses' => 'ProductController@store_shopee']);
     Route::get('products/create_shopee', ['as' => 'products.create_shopee', 'uses' => 'ProductController@create_shopee']);
+    Route::get('products/create_shopee', ['as' => 'products.create_shopee', 'uses' => 'ProductController@create_shopee']);
+
+    Route::post('order/import_shopee', ['as' => 'order.import_shopee', 'uses' => 'InventoryController@uploadShopeeOrder']);
 
 
 });

@@ -8,10 +8,23 @@ use App\SoldProduct;
 use App\ProductCategory;
 use Illuminate\Http\Request;
 use Maatwebsite\Excel\Facades\Excel;
-use Illuminate\Support\Facades\Input;
+use App\Imports\OrdersImport;
+use App\Services\ExcelService;
+use App\Services\InventoryService;
+use Illuminate\Support\Facades\DB;
 
 class InventoryController extends Controller
 {
+    protected $excelService;
+    protected $inventoryService;
+
+    public function __construct(ExcelService $excelService, InventoryService $inventoryService)
+    {
+        $this->excelService = $excelService;
+        $this->inventoryService = $inventoryService;
+    }
+
+
     public function stats()
     {
         return view('inventory.stats', [
@@ -23,20 +36,26 @@ class InventoryController extends Controller
         ]);
     }
 
-    public function uploadShopeeOrder()
+    public function uploadShopeeOrder(Request $request)
     {
-        try {
-            Excel::load(Input::file('file'), function ($reader) {
+        DB::beginTransaction();
 
-                foreach ($reader->toArray() as $row) {
-                    User::firstOrCreate($row);
-                }
-            });
-            \Session::flash('success', 'Users uploaded successfully.');
-            return redirect(route('users.index'));
+        try {
+            $excel = Excel::toCollection(new OrdersImport, $request->files->get('shopee_excel'));
+            $sortExcel = $this->excelService->sortExcelByCollection($excel);
+            $this->inventoryService->createShopeeOrder($sortExcel);
+            DB::commit();
+            return redirect()
+                ->route('inventory.stats')
+                ->withStatus('Shopee order update successfully created.');
         } catch (\Exception $e) {
-            \Session::flash('error', $e->getMessage());
-            return redirect(route('users.index'));
+            dd($e);
+            DB::rollback();
+            return redirect()
+                ->route('inventory.stats')
+                ->withStatus('Shopee order update successfully error.');
         }
+
+
     }
 }

@@ -4,13 +4,16 @@
 @section('content')
     <div class="row">
         <div class="col-md-12">
-            <form method="post" action="" autocomplete="off">
+            <form method="POST" action="{{ route('order.import_shopee') }}"  enctype="multipart/form-data">
                 @csrf
                 <div class="card">
                     <div class="custom-file">
                         <input type="file" class="custom-file-input" id="customFile" name="shopee_excel">
                         <label class="custom-file-label" for="customFile">{{ trans('auth.choose_file') }}</label>
                     </div>
+                </div>
+                <div class="text-center">
+                    <button type="submit" class="btn btn-success mt-4">{{ trans('button.save') }}</button>
                 </div>
             </form>
         </div>
